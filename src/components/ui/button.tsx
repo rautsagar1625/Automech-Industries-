@@ -4,17 +4,17 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 export const buttonVariants = cva(
-  "group/btn inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors duration-200 select-none focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-oxide disabled:pointer-events-none disabled:opacity-50",
+  "group/btn inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors duration-200 select-none focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-brand disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        primary: "bg-oxide text-white hover:bg-oxide-deep",
-        dark: "bg-ink text-paper hover:bg-ink-soft",
-        outline: "border border-ink/80 text-ink hover:bg-ink hover:text-paper",
-        light: "bg-paper text-ink hover:bg-white",
+        primary: "bg-brand text-white hover:bg-brand-deep",
+        dark: "bg-navy text-white hover:bg-navy-soft",
+        outline: "border border-navy/80 text-navy hover:bg-navy hover:text-white",
+        light: "bg-white text-navy hover:bg-steel",
         "outline-light":
-          "border border-on-night/40 text-on-night hover:border-on-night hover:bg-on-night/10",
-        ghost: "text-ink hover:bg-ink/5",
+          "border border-on-navy/40 text-on-navy hover:border-on-navy hover:bg-on-navy/10",
+        ghost: "text-navy hover:bg-navy/5",
       },
       size: {
         sm: "h-10 px-4 text-sm",

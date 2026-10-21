@@ -21,6 +21,7 @@ export interface BusinessLocation {
   village: string;
   district: string;
   state: string;
+  postalCode?: string;
   country: string;
   fullAddressString: string;
 }
@@ -66,9 +67,11 @@ export interface IndustryItem {
 export interface SiteConfig {
   name: string;
   shortName: string;
+  url: string;
   tagline: string;
   description: string;
   mainNav: NavItem[];
   footerNav: FooterNavGroup[];
+  legalNav: NavItem[];
   company: CompanyMetadata;
 }

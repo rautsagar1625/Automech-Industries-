@@ -20,7 +20,7 @@ export function SectorShowcase() {
   return (
     <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
       <div className="lg:col-span-5">
-        <div className="bg-night relative aspect-[4/3] overflow-hidden lg:aspect-[4/5]">
+        <div className="bg-navy relative aspect-[4/3] overflow-hidden lg:aspect-[4/5]">
           <AnimatePresence initial={false} mode="popLayout">
             <motion.div
               key={active}
@@ -44,7 +44,7 @@ export function SectorShowcase() {
         </div>
       </div>
 
-      <ol className="border-ink self-center border-t lg:col-span-7">
+      <ol className="border-navy self-center border-t lg:col-span-7">
         {industriesData.map((industry, i) => {
           const isActive = industry.id === active;
           return (
@@ -58,7 +58,7 @@ export function SectorShowcase() {
                 <span
                   className={cn(
                     "label transition-colors",
-                    isActive ? "text-oxide" : "text-graphite"
+                    isActive ? "text-brand" : "text-graphite"
                   )}
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -66,13 +66,13 @@ export function SectorShowcase() {
                 <span
                   className={cn(
                     "font-display text-xl font-semibold transition-colors sm:text-2xl",
-                    isActive ? "text-oxide" : "text-ink"
+                    isActive ? "text-brand" : "text-navy"
                   )}
                 >
                   {industry.title}
                 </span>
                 <ButtonArrow
-                  className={cn("h-5 w-5", isActive ? "text-oxide" : "text-rule-strong")}
+                  className={cn("h-5 w-5", isActive ? "text-brand" : "text-rule-strong")}
                 />
               </Link>
             </li>

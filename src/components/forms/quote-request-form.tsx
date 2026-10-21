@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -30,7 +31,7 @@ const categoryOptions: { value: ProjectCategory; label: string }[] = [
 ];
 
 const inputClass =
-  "mt-2 block w-full border border-rule-strong bg-card px-4 py-3 text-[0.98rem] text-ink placeholder:text-graphite/70 transition-colors focus:border-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-oxide aria-[invalid=true]:border-oxide";
+  "mt-2 block w-full border border-rule-strong bg-card px-4 py-3 text-[0.98rem] text-navy placeholder:text-graphite/70 transition-colors focus:border-navy focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-brand aria-[invalid=true]:border-brand";
 
 function Field({
   id,
@@ -49,13 +50,13 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label htmlFor={id} className="text-ink text-sm font-medium">
+      <label htmlFor={id} className="text-navy text-sm font-medium">
         {label}
         {optional && <span className="text-graphite font-normal"> (optional)</span>}
       </label>
       {children}
       {error && (
-        <p id={`${id}-error`} className="text-oxide mt-1.5 text-sm">
+        <p id={`${id}-error`} className="text-brand mt-1.5 text-sm">
           {error}
         </p>
       )}
@@ -64,7 +65,11 @@ function Field({
 }
 
 export function QuoteRequestForm({ defaultCategory }: { defaultCategory?: ProjectCategory }) {
-  const [isSuccess, setIsSuccess] = React.useState(false);
+  const [submissionState, setSubmissionState] = React.useState<{
+    success: boolean;
+    referenceId?: string;
+    errorMessage?: string;
+  } | null>(null);
 
   const {
     register,
@@ -84,15 +89,42 @@ export function QuoteRequestForm({ defaultCategory }: { defaultCategory?: Projec
       targetCompletionDate: "",
       projectBrief: "",
       scopeAcknowledgment: false,
+      privacyConsent: false,
+      honeypot: "",
     },
   });
 
   const onSubmit = async (data: EnquiryFormValues) => {
-    // TODO: connect to a real submission endpoint (email, CRM or server action).
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    console.info("Quote request submitted:", data);
-    setIsSuccess(true);
-    reset();
+    setSubmissionState(null);
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        setSubmissionState({
+          success: false,
+          errorMessage:
+            result.message || "Failed to submit enquiry. Please check your inputs or try again.",
+        });
+        return;
+      }
+
+      setSubmissionState({
+        success: true,
+        referenceId: result.referenceId,
+      });
+      reset();
+    } catch {
+      setSubmissionState({
+        success: false,
+        errorMessage: "Network error. Please check your connection and try again.",
+      });
+    }
   };
 
   const a11y = (name: keyof EnquiryFormValues) => ({
@@ -100,16 +132,34 @@ export function QuoteRequestForm({ defaultCategory }: { defaultCategory?: Projec
     "aria-describedby": errors[name] ? `${name}-error` : undefined,
   });
 
-  if (isSuccess) {
+  if (submissionState?.success) {
     return (
-      <div className="border-ink border-t pt-10" role="status">
-        <p className="label text-oxide">Enquiry sent</p>
-        <h3 className="type-h3 text-ink mt-3">Thank you. We have your enquiry.</h3>
-        <p className="text-graphite mt-3 max-w-md">
-          We will review the details and contact you to discuss scope, quantities and delivery.
+      <div className="border-navy border-t pt-10" role="status" tabIndex={-1}>
+        <div className="bg-brand-tint text-brand inline-flex items-center gap-2 px-3 py-1 font-mono text-xs font-medium tracking-wider uppercase">
+          ✓ Enquiry Received
+        </div>
+        <h3 className="type-h3 text-navy mt-4">
+          Thank you. Your quotation request has been logged.
+        </h3>
+        {submissionState.referenceId && (
+          <div className="bg-steel border-rule mt-4 border p-4">
+            <span className="text-graphite block text-xs">Your Enquiry Reference:</span>
+            <span className="text-brand font-mono text-lg font-bold">
+              {submissionState.referenceId}
+            </span>
+          </div>
+        )}
+        <p className="text-graphite mt-4 max-w-md">
+          Our engineering desk in Dahigaon will review your requirements, inspect the drawing scope,
+          and contact you directly.
         </p>
-        <Button variant="outline" size="sm" className="mt-8" onClick={() => setIsSuccess(false)}>
-          Send another enquiry
+        <Button
+          variant="outline"
+          size="sm"
+          className="mt-8"
+          onClick={() => setSubmissionState(null)}
+        >
+          Submit another quotation request
         </Button>
       </div>
     );
@@ -118,7 +168,7 @@ export function QuoteRequestForm({ defaultCategory }: { defaultCategory?: Projec
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-10">
       <fieldset>
-        <legend className="label text-graphite border-ink mb-6 w-full border-t pt-6">
+        <legend className="label text-graphite border-navy mb-6 w-full border-t pt-6">
           1 · Your details
         </legend>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -167,7 +217,7 @@ export function QuoteRequestForm({ defaultCategory }: { defaultCategory?: Projec
       </fieldset>
 
       <fieldset>
-        <legend className="label text-graphite border-ink mb-6 w-full border-t pt-6">
+        <legend className="label text-graphite border-navy mb-6 w-full border-t pt-6">
           2 · Your project
         </legend>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -240,30 +290,118 @@ export function QuoteRequestForm({ defaultCategory }: { defaultCategory?: Projec
         </div>
       </fieldset>
 
-      <div className="bg-card border-rule border p-5">
-        <label className="flex cursor-pointer items-start gap-3">
-          <input
-            type="checkbox"
-            className="accent-oxide mt-1 h-4 w-4 shrink-0"
-            {...a11y("scopeAcknowledgment")}
-            {...register("scopeAcknowledgment")}
-          />
-          <span className="text-ink-soft text-sm leading-relaxed">
-            I understand that Automech Industries fabricates and installs steel structures,
-            platforms and supports, and does not manufacture complete boilers, pressure vessels or
-            filtration equipment.
-          </span>
-        </label>
-        {errors.scopeAcknowledgment && (
-          <p id="scopeAcknowledgment-error" className="text-oxide mt-2 text-sm">
-            {errors.scopeAcknowledgment.message}
-          </p>
-        )}
+      {/* Anti-spam honeypot */}
+      <div className="sr-only" aria-hidden="true">
+        <label htmlFor="company_website_url">Do not fill this field</label>
+        <input
+          id="company_website_url"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          {...register("honeypot")}
+        />
       </div>
 
-      <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto">
-        {isSubmitting ? "Sending…" : "Send enquiry"}
-        {!isSubmitting && <ButtonArrow />}
+      {submissionState?.errorMessage && (
+        <div
+          role="alert"
+          className="border-brand bg-brand-tint/60 text-navy flex items-start gap-3 border p-4"
+        >
+          <span className="text-brand text-lg leading-none font-bold" aria-hidden="true">
+            !
+          </span>
+          <p className="text-sm font-medium">{submissionState.errorMessage}</p>
+        </div>
+      )}
+
+      <div className="space-y-4">
+        <div className="bg-card border-rule border p-5">
+          <label className="flex cursor-pointer items-start gap-3">
+            <input
+              type="checkbox"
+              className="accent-brand mt-1 h-4 w-4 shrink-0"
+              {...a11y("scopeAcknowledgment")}
+              {...register("scopeAcknowledgment")}
+            />
+            <span className="text-navy-soft text-sm leading-relaxed">
+              I understand that Automech Industries fabricates and installs steel structures,
+              platforms and supports, and does not manufacture complete boilers, pressure vessels or
+              filtration equipment.
+            </span>
+          </label>
+          {errors.scopeAcknowledgment && (
+            <p id="scopeAcknowledgment-error" className="text-brand mt-2 text-sm">
+              {errors.scopeAcknowledgment.message}
+            </p>
+          )}
+        </div>
+
+        <div className="bg-card border-rule border p-5">
+          <label className="flex cursor-pointer items-start gap-3">
+            <input
+              type="checkbox"
+              className="accent-brand mt-1 h-4 w-4 shrink-0"
+              {...a11y("privacyConsent")}
+              {...register("privacyConsent")}
+            />
+            <span className="text-navy-soft text-sm leading-relaxed">
+              I consent to Automech Industries storing and processing these project details and
+              technical specifications to prepare our quotation, in accordance with the{" "}
+              <Link
+                href="/privacy"
+                target="_blank"
+                className="text-brand hover:text-brand-deep underline"
+              >
+                Privacy Policy
+              </Link>
+              .
+            </span>
+          </label>
+          {errors.privacyConsent && (
+            <p id="privacyConsent-error" className="text-brand mt-2 text-sm">
+              {errors.privacyConsent.message}
+            </p>
+          )}
+        </div>
+      </div>
+
+      <Button
+        type="submit"
+        size="lg"
+        disabled={isSubmitting}
+        className="inline-flex w-full min-w-[160px] items-center justify-center gap-2 sm:w-auto"
+      >
+        {isSubmitting ? (
+          <>
+            <svg
+              className="mr-2 -ml-1 h-4 w-4 animate-spin text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+              />
+            </svg>
+            <span>Submitting RFQ…</span>
+          </>
+        ) : (
+          <>
+            <span>Send enquiry</span>
+            <ButtonArrow />
+          </>
+        )}
       </Button>
     </form>
   );

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 /** Four L-shaped corner marks sitting just outside a frame. Parent must be `relative`. */
 export function CropMarks({ className }: { className?: string }) {
-  const corner = "absolute h-4 w-4 border-ink/60";
+  const corner = "absolute h-4 w-4 border-navy/60";
   return (
     <span aria-hidden="true" className={cn("pointer-events-none absolute -inset-3", className)}>
       <span className={cn(corner, "top-0 left-0 border-t border-l")} />
@@ -33,7 +33,7 @@ export function DimensionLine({
   tone?: "light" | "dark";
   className?: string;
 }) {
-  const color = tone === "light" ? "text-ink-soft" : "text-on-night-muted";
+  const color = tone === "light" ? "text-navy-soft" : "text-on-navy-muted";
   return (
     <div className={cn("flex items-center gap-3 font-mono text-[0.7rem]", color, className)}>
       <span className="shrink-0">{start}</span>
@@ -48,7 +48,7 @@ export function DimensionLine({
         </svg>
         <span className="h-px w-full bg-current" />
         {middle && (
-          <span className="bg-paper absolute left-1/2 -translate-x-1/2 px-2 whitespace-nowrap">
+          <span className="absolute left-1/2 -translate-x-1/2 bg-white px-2 whitespace-nowrap">
             {middle}
           </span>
         )}

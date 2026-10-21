@@ -40,7 +40,7 @@ export function ScrollWords({ parts, className }: ScrollWordsProps) {
           /^\s+$/.test(word) || word === "" ? (
             word
           ) : (
-            <span key={`${p}-${w}`} data-word className={cn(part.accent && "text-oxide")}>
+            <span key={`${p}-${w}`} data-word className={cn(part.accent && "text-brand")}>
               {word}
             </span>
           )

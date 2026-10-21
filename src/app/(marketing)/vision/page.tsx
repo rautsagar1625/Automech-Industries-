@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Vision",
   description:
     "How Automech Industries works today, and its plans for larger industrial projects and machinery manufacturing.",
+  alternates: {
+    canonical: "/vision",
+  },
 };
 
 const principles = [
@@ -63,17 +66,17 @@ export default function VisionPage() {
               />
             </div>
           </div>
-          <ol className="border-ink border-t lg:col-span-7 lg:col-start-6">
+          <ol className="border-navy border-t lg:col-span-7 lg:col-start-6">
             {principles.map((p, i) => (
               <li
                 key={p.title}
                 className="border-rule grid grid-cols-[3rem_1fr] gap-x-4 border-b py-8 sm:grid-cols-[5rem_1fr]"
               >
-                <span className="font-display text-oxide text-3xl font-bold sm:text-4xl">
+                <span className="font-display text-brand text-3xl font-bold sm:text-4xl">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="type-h3 text-ink">{p.title}</h3>
+                  <h3 className="type-h3 text-navy">{p.title}</h3>
                   <p className="text-graphite mt-2 max-w-lg">{p.text}</p>
                 </div>
               </li>
@@ -83,7 +86,7 @@ export default function VisionPage() {
       </section>
 
       {/* Today and next */}
-      <section aria-labelledby="next-title" className="bg-night text-on-night py-20 sm:py-28">
+      <section aria-labelledby="next-title" className="bg-navy text-on-navy py-20 sm:py-28">
         <div className="container-site">
           <SectionHeader
             index="02"
@@ -94,35 +97,35 @@ export default function VisionPage() {
           />
 
           <div className="mt-14 grid grid-cols-1 gap-3 lg:grid-cols-12">
-            <div className="border-night-rule bg-night-raised border p-8 sm:p-10 lg:col-span-5">
-              <p className="label text-on-night">Today</p>
-              <ul className="border-night-rule mt-6 border-t" role="list">
+            <div className="border-navy-rule bg-navy-raised border p-8 sm:p-10 lg:col-span-5">
+              <p className="label text-on-navy">Today</p>
+              <ul className="border-navy-rule mt-6 border-t" role="list">
                 {today.map((t) => (
-                  <li key={t} className="border-night-rule text-on-night border-b py-3.5">
+                  <li key={t} className="border-navy-rule text-on-navy border-b py-3.5">
                     {t}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="border-on-night-muted/50 border border-dashed p-8 sm:p-10 lg:col-span-4">
-              <p className="label text-on-night flex items-center justify-between gap-4">
+            <div className="border-on-navy-muted/50 border border-dashed p-8 sm:p-10 lg:col-span-4">
+              <p className="label text-on-navy flex items-center justify-between gap-4">
                 Next
-                <span className="text-on-night-muted tracking-normal normal-case">
+                <span className="text-on-navy-muted tracking-normal normal-case">
                   Plans, not current services
                 </span>
               </p>
-              <ul className="border-night-rule mt-6 border-t" role="list">
+              <ul className="border-navy-rule mt-6 border-t" role="list">
                 {next.map((t) => (
                   <li
                     key={t}
-                    className="border-night-rule text-on-night border-b border-dashed py-3.5"
+                    className="border-navy-rule text-on-navy border-b border-dashed py-3.5"
                   >
                     {t}
                   </li>
                 ))}
               </ul>
-              <p className="text-on-night-muted mt-6 text-[0.95rem]">
+              <p className="text-on-navy-muted mt-6 text-[0.95rem]">
                 Building on more than two decades of structural fabrication and site work. For
                 complex components we continue to work with specialist subcontractors.
               </p>

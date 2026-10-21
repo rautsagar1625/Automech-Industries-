@@ -18,7 +18,7 @@ export function QuoteBand({
   description = "Send us what you have. We will review it and contact you to discuss scope, quantities and delivery.",
 }: QuoteBandProps) {
   return (
-    <section aria-labelledby="quote-band-title" className="bg-oxide text-white">
+    <section aria-labelledby="quote-band-title" className="bg-brand text-white">
       <div className="container-site grid grid-cols-1 gap-12 py-20 sm:py-24 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <p className="label text-white/75">Request a quote</p>

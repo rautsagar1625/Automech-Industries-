@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Contact Automech Industries in Dahigaon, Solapur district, Maharashtra, for fabrication enquiries and quotations.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -39,9 +42,9 @@ export default function ContactPage() {
 
       <section aria-label="Contact details" className="pb-20 sm:pb-28">
         <div className="container-site grid grid-cols-1 gap-10 lg:grid-cols-2">
-          <div className="border-ink border-t pt-8">
+          <div className="border-navy border-t pt-8">
             <h2 className="label text-graphite font-sans">Works</h2>
-            <address className="type-h3 text-ink mt-4 not-italic">
+            <address className="type-h3 text-navy mt-4 not-italic">
               {company.location.village}
               <br />
               {company.location.district}
@@ -61,7 +64,7 @@ export default function ContactPage() {
                   >
                     <dt className="label text-graphite pt-1">{c.label}</dt>
                     <dd>
-                      <a href={c.href} className="text-ink hover:text-oxide font-medium">
+                      <a href={c.href} className="text-navy hover:text-brand font-medium">
                         {c.value}
                       </a>
                     </dd>
@@ -71,17 +74,17 @@ export default function ContactPage() {
             )}
           </div>
 
-          <div className="bg-night text-on-night p-8 sm:p-10">
+          <div className="bg-navy text-on-navy p-8 sm:p-10">
             <h2 className="type-h3">Requesting a quotation?</h2>
-            <p className="text-on-night-muted mt-3">These details help us respond quickly:</p>
-            <ul className="border-night-rule mt-6 border-t" role="list">
+            <p className="text-on-navy-muted mt-3">These details help us respond quickly:</p>
+            <ul className="border-navy-rule mt-6 border-t" role="list">
               {[
                 "General arrangement drawings or sketches",
                 "Approximate steel weight or bill of materials",
                 "Fabrication only, or fabrication and installation",
                 "Site location and target date",
               ].map((item) => (
-                <li key={item} className="border-night-rule border-b py-3.5">
+                <li key={item} className="border-navy-rule border-b py-3.5">
                   {item}
                 </li>
               ))}

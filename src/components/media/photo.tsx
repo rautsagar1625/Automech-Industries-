@@ -27,7 +27,7 @@ export function StockTag({
   return (
     <span
       className={cn(
-        "bg-night/55 pointer-events-none absolute bottom-2.5 left-2.5 px-1.5 py-0.5 text-[0.65rem] tracking-wide text-white/85 backdrop-blur-sm",
+        "bg-navy/55 pointer-events-none absolute bottom-2.5 left-2.5 px-1.5 py-0.5 text-[0.65rem] tracking-wide text-white/85 backdrop-blur-sm",
         className
       )}
     >
@@ -48,7 +48,7 @@ export function Photo({
 }: PhotoProps) {
   return (
     <figure className={cn("relative", className)}>
-      <div className={cn("group/photo bg-paper-deep relative overflow-hidden", aspect)}>
+      <div className={cn("group/photo bg-steel relative overflow-hidden", aspect)}>
         <Image
           src={item.src}
           alt={item.alt}

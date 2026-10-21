@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { CookieBanner } from "@/components/ui/cookie-banner";
 
 export default function MarketingLayout({
   children,
@@ -14,6 +15,7 @@ export default function MarketingLayout({
         {children}
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   );
 }

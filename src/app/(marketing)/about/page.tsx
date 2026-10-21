@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Automech Industries has operated under this name since 1997 from Dahigaon, Solapur district, Maharashtra, fabricating and installing industrial steel structures.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const pillars = [
@@ -90,7 +93,7 @@ export default function AboutPage() {
               title="The short version"
             />
             <p
-              className="font-display text-oxide mt-10 text-[clamp(5rem,12vw,10rem)] leading-[0.85] font-bold tracking-tight"
+              className="font-display text-brand mt-10 text-[clamp(5rem,12vw,10rem)] leading-[0.85] font-bold tracking-tight"
               aria-hidden="true"
             >
               {company.foundedYear}
@@ -99,14 +102,14 @@ export default function AboutPage() {
               The year we started operating as Automech Industries in Dahigaon.
             </p>
           </div>
-          <dl className="border-ink self-end border-t lg:col-span-6 lg:col-start-7">
+          <dl className="border-navy self-end border-t lg:col-span-6 lg:col-start-7">
             {facts.map((fact) => (
               <div
                 key={fact.term}
                 className="border-rule grid grid-cols-1 gap-1 border-b py-5 sm:grid-cols-3 sm:gap-6"
               >
                 <dt className="label text-graphite pt-1">{fact.term}</dt>
-                <dd className="text-ink sm:col-span-2">{fact.detail}</dd>
+                <dd className="text-navy sm:col-span-2">{fact.detail}</dd>
               </div>
             ))}
           </dl>
@@ -114,7 +117,7 @@ export default function AboutPage() {
       </section>
 
       {/* How we work */}
-      <section aria-labelledby="work-title" className="bg-night text-on-night py-20 sm:py-28">
+      <section aria-labelledby="work-title" className="bg-navy text-on-navy py-20 sm:py-28">
         <div className="container-site">
           <SectionHeader
             index="02"
@@ -132,9 +135,9 @@ export default function AboutPage() {
                   aspect="aspect-[4/3]"
                   sizes="(min-width: 768px) 33vw, 100vw"
                 />
-                <p className="label text-on-night-muted mt-6">{String(i + 1).padStart(2, "0")}</p>
-                <h3 className="type-h3 text-on-night mt-2">{p.title}</h3>
-                <p className="text-on-night-muted mt-3">{p.text}</p>
+                <p className="label text-on-navy-muted mt-6">{String(i + 1).padStart(2, "0")}</p>
+                <h3 className="type-h3 text-on-navy mt-2">{p.title}</h3>
+                <p className="text-on-navy-muted mt-3">{p.text}</p>
               </li>
             ))}
           </ul>
@@ -157,18 +160,18 @@ export default function AboutPage() {
           </div>
           <ol className="bg-rule border-rule mt-12 grid grid-cols-1 gap-px border-y sm:grid-cols-2 lg:grid-cols-3">
             {capabilitiesData.map((c, i) => (
-              <li key={c.id} className="bg-paper">
+              <li key={c.id} className="bg-white">
                 <Link
                   href={`/capabilities#${c.slug}`}
                   className="group/link hover:bg-card flex h-full items-start justify-between gap-4 p-6 transition-colors"
                 >
                   <span>
-                    <span className="label text-oxide">{String(i + 1).padStart(2, "0")}</span>
-                    <span className="text-ink group-hover/link:text-oxide mt-2 block text-lg font-semibold transition-colors">
+                    <span className="label text-brand">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-navy group-hover/link:text-brand mt-2 block text-lg font-semibold transition-colors">
                       {c.title}
                     </span>
                   </span>
-                  <ButtonArrow className="text-rule-strong group-hover/link:text-oxide mt-7 shrink-0" />
+                  <ButtonArrow className="text-rule-strong group-hover/link:text-brand mt-7 shrink-0" />
                 </Link>
               </li>
             ))}
@@ -177,7 +180,7 @@ export default function AboutPage() {
       </section>
 
       {/* Looking ahead */}
-      <section aria-labelledby="ahead-title" className="bg-paper-deep py-20 sm:py-24">
+      <section aria-labelledby="ahead-title" className="bg-steel py-20 sm:py-24">
         <div className="container-site grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end">
           <SectionHeader
             index="04"

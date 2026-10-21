@@ -48,7 +48,7 @@ export function SectionNav({ items, label }: { items: SectionNavItem[]; label: s
       {/* Mobile / tablet strip */}
       <ul
         ref={stripRef}
-        className="border-rule bg-paper/95 -mx-5 flex [scrollbar-width:none] gap-1 overflow-x-auto border-y px-5 py-2 backdrop-blur-md sm:-mx-8 sm:px-8 lg:hidden"
+        className="border-rule -mx-5 flex [scrollbar-width:none] gap-1 overflow-x-auto border-y bg-white/95 px-5 py-2 backdrop-blur-md sm:-mx-8 sm:px-8 lg:hidden"
       >
         {items.map((item, i) => (
           <li key={item.id} data-id={item.id} className="shrink-0">
@@ -57,7 +57,7 @@ export function SectionNav({ items, label }: { items: SectionNavItem[]; label: s
               aria-current={active === item.id ? "true" : undefined}
               className={cn(
                 "block px-3 py-2 text-sm whitespace-nowrap transition-colors",
-                active === item.id ? "bg-ink text-paper" : "text-graphite hover:text-ink"
+                active === item.id ? "bg-navy text-white" : "text-graphite hover:text-navy"
               )}
             >
               <span className="mr-1.5 font-mono text-[0.7rem]">
@@ -70,7 +70,7 @@ export function SectionNav({ items, label }: { items: SectionNavItem[]; label: s
       </ul>
 
       {/* Desktop list */}
-      <ol className="border-ink hidden border-t lg:block">
+      <ol className="border-navy hidden border-t lg:block">
         {items.map((item, i) => {
           const isActive = active === item.id;
           return (
@@ -80,17 +80,17 @@ export function SectionNav({ items, label }: { items: SectionNavItem[]; label: s
                 aria-current={isActive ? "true" : undefined}
                 className={cn(
                   "relative flex gap-3 py-3.5 pl-4 text-[0.95rem] leading-snug transition-colors",
-                  isActive ? "text-ink font-medium" : "text-graphite hover:text-ink"
+                  isActive ? "text-navy font-medium" : "text-graphite hover:text-navy"
                 )}
               >
                 <span
                   className={cn(
                     "absolute top-0 bottom-0 left-0 w-0.5 transition-colors",
-                    isActive ? "bg-oxide" : "bg-transparent"
+                    isActive ? "bg-brand" : "bg-transparent"
                   )}
                   aria-hidden="true"
                 />
-                <span className={cn("label pt-0.5", isActive ? "text-oxide" : "text-graphite")}>
+                <span className={cn("label pt-0.5", isActive ? "text-brand" : "text-graphite")}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 {item.label}

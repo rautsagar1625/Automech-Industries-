@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Careers",
   description:
     "Work with Automech Industries in Dahigaon, Solapur district: fabrication, welding and site erection roles.",
+  alternates: {
+    canonical: "/careers",
+  },
 };
 
 const roles = [
@@ -43,17 +46,17 @@ export default function CareersPage() {
       <section aria-label="Roles" className="pb-20 sm:pb-28">
         <div className="container-site">
           <p className="label text-graphite">Roles we hire for</p>
-          <ul className="border-ink mt-5 border-t" role="list">
+          <ul className="border-navy mt-5 border-t" role="list">
             {roles.map((role) => (
               <li
                 key={role.title}
                 className="border-rule grid grid-cols-1 gap-4 border-b py-8 lg:grid-cols-12 lg:gap-12"
               >
                 <div className="lg:col-span-4">
-                  <h2 className="type-h3 text-ink">{role.title}</h2>
+                  <h2 className="type-h3 text-navy">{role.title}</h2>
                   <p className="label text-graphite mt-2">{role.place}</p>
                 </div>
-                <div className="text-ink-soft lg:col-span-6">
+                <div className="text-navy-soft lg:col-span-6">
                   <p>{role.text}</p>
                   <p className="text-graphite mt-2 text-[0.95rem]">{role.needs}</p>
                 </div>
@@ -62,7 +65,7 @@ export default function CareersPage() {
           </ul>
 
           <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-12">
-            <h2 className="type-h2 text-ink lg:col-span-4">How to apply</h2>
+            <h2 className="type-h2 text-navy lg:col-span-4">How to apply</h2>
             <ol className="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:col-span-8">
               {[
                 {
@@ -75,16 +78,16 @@ export default function CareersPage() {
                 },
                 { t: "Start work", d: "We agree the role, timing and where you will be based." },
               ].map((step, i) => (
-                <li key={step.t} className="border-ink border-t pt-5">
-                  <span className="label text-oxide">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="text-ink mt-2 text-lg font-semibold">{step.t}</h3>
+                <li key={step.t} className="border-navy border-t pt-5">
+                  <span className="label text-brand">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="text-navy mt-2 text-lg font-semibold">{step.t}</h3>
                   <p className="text-graphite mt-1.5 text-[0.95rem]">{step.d}</p>
                 </li>
               ))}
             </ol>
           </div>
 
-          <div className="bg-night text-on-night mt-16 flex flex-col gap-6 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+          <div className="bg-navy text-on-navy mt-16 flex flex-col gap-6 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
             <p className="type-h3 max-w-xl">Interested in working with us?</p>
             <ButtonLink href="/contact" variant="light" className="shrink-0">
               Contact us

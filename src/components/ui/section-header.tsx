@@ -36,12 +36,12 @@ export function SectionHeader({
         <p
           className={cn(
             "label mb-5 flex items-center gap-3",
-            dark ? "text-on-night-muted" : "text-graphite"
+            dark ? "text-on-navy-muted" : "text-graphite"
           )}
         >
-          {index && <span className={dark ? "text-on-night" : "text-oxide"}>{index}</span>}
+          {index && <span className={dark ? "text-on-navy" : "text-brand"}>{index}</span>}
           {index && eyebrow && (
-            <span className={cn("h-px w-8", dark ? "bg-night-rule" : "bg-rule-strong")} />
+            <span className={cn("h-px w-8", dark ? "bg-navy-rule" : "bg-rule-strong")} />
           )}
           {eyebrow && <span>{eyebrow}</span>}
         </p>
@@ -50,14 +50,14 @@ export function SectionHeader({
         id={id}
         className={cn(
           Heading === "h1" ? "type-h1" : "type-h2",
-          dark ? "text-on-night" : "text-ink"
+          dark ? "text-on-navy" : "text-navy"
         )}
       >
         {title}
       </Heading>
       {description && (
         <div
-          className={cn("type-lead mt-5 max-w-2xl", dark ? "text-on-night-muted" : "text-graphite")}
+          className={cn("type-lead mt-5 max-w-2xl", dark ? "text-on-navy-muted" : "text-graphite")}
         >
           {description}
         </div>

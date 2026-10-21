@@ -47,7 +47,7 @@ export function HeroVideo() {
   };
 
   return (
-    <div className="bg-night absolute inset-0 overflow-hidden">
+    <div className="bg-navy absolute inset-0 overflow-hidden">
       <video
         ref={videoRef}
         data-hero-video
@@ -69,7 +69,7 @@ export function HeroVideo() {
         type="button"
         onClick={toggle}
         aria-label={playing ? "Pause background video" : "Play background video"}
-        className="bg-paper/90 text-ink hover:bg-paper absolute top-3 right-4 z-10 flex h-10 w-10 items-center justify-center backdrop-blur-sm transition-colors sm:top-5 sm:right-6"
+        className="text-navy absolute top-3 right-4 z-10 flex h-10 w-10 items-center justify-center bg-white/90 backdrop-blur-sm transition-colors hover:bg-white sm:top-5 sm:right-6"
       >
         {playing ? (
           <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" aria-hidden="true">

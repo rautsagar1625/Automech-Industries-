@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Request a Quote",
   description:
     "Send Automech Industries your drawings and requirements for a fabrication and installation quotation.",
+  alternates: {
+    canonical: "/request-quote",
+  },
 };
 
 const steps = [
@@ -38,25 +41,25 @@ export default function RequestQuotePage() {
 
           <aside className="lg:col-span-4 lg:col-start-9">
             <div className="lg:sticky lg:top-[calc(var(--header-height)+2rem)]">
-              <h2 className="label text-graphite border-ink border-t pt-6 font-sans">
+              <h2 className="label text-graphite border-navy border-t pt-6 font-sans">
                 What happens next
               </h2>
               <ol className="mt-6 space-y-6">
                 {steps.map((s, i) => (
                   <li key={s.title} className="grid grid-cols-[2rem_1fr] gap-3">
-                    <span className="label text-oxide pt-0.5">
+                    <span className="label text-brand pt-0.5">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <p className="text-ink font-medium">{s.title}</p>
+                      <p className="text-navy font-medium">{s.title}</p>
                       <p className="text-graphite mt-1 text-[0.95rem]">{s.text}</p>
                     </div>
                   </li>
                 ))}
               </ol>
 
-              <div className="bg-paper-deep mt-10 p-6">
-                <h2 className="text-ink font-medium">Our scope</h2>
+              <div className="bg-steel mt-10 p-6">
+                <h2 className="text-navy font-medium">Our scope</h2>
                 <p className="text-graphite mt-2 text-[0.95rem]">
                   {siteConfig.company.scopeStatement}
                 </p>

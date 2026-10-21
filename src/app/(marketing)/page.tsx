@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
+
+export const metadata: Metadata = {
+  title: "Industrial Steel Fabrication & Equipment Support Structures | Dahigaon, Maharashtra",
+  description:
+    "Automech Industries manufactures heavy equipment support structures, platforms, walkways, stairs and railings built to your engineering drawings. Operating continuously since 1997 in Dahigaon, Solapur.",
+  alternates: {
+    canonical: "/",
+  },
+};
 import { media } from "@/content/media";
 import { Hero } from "@/components/home/hero";
 import { CapabilityIndex } from "@/components/home/capability-index";
@@ -58,7 +68,7 @@ export default function HomePage() {
       <Hero />
 
       {/* Trades band */}
-      <div className="bg-oxide py-5 text-white sm:py-6" aria-label="What happens in our workshop">
+      <div className="bg-brand py-5 text-white sm:py-6" aria-label="What happens in our workshop">
         <Marquee duration={32}>
           {trades.map((t) => (
             <span
@@ -79,7 +89,7 @@ export default function HomePage() {
         <section aria-label="What we do" className="overflow-hidden py-20 sm:py-28">
           <div className="container-site grid grid-cols-1 gap-10 lg:grid-cols-12">
             <ScrollWords
-              className="font-display text-ink text-[clamp(1.85rem,3.6vw,3.4rem)] leading-[1.1] font-semibold tracking-[-0.02em] lg:col-span-10"
+              className="font-display text-navy text-[clamp(1.85rem,3.6vw,3.4rem)] leading-[1.1] font-semibold tracking-[-0.02em] lg:col-span-10"
               parts={[
                 { text: "We don't build boilers, filters or machines. We build" },
                 { text: "the steel that holds them up,", accent: true },
@@ -95,7 +105,7 @@ export default function HomePage() {
             {strip.map((item) => (
               <div
                 key={item.source}
-                className="bg-paper-deep relative mr-3 h-48 w-64 shrink-0 overflow-hidden sm:h-64 sm:w-[22rem]"
+                className="bg-steel relative mr-3 h-48 w-64 shrink-0 overflow-hidden sm:h-64 sm:w-[22rem]"
               >
                 <Image
                   src={item.src}
@@ -139,7 +149,7 @@ export default function HomePage() {
         <section aria-labelledby="why-title" className="py-20 sm:py-28">
           <div className="container-site grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
             <div className="relative pb-10 lg:col-span-5 lg:pb-0">
-              <div data-reveal className="bg-paper-deep relative aspect-[4/5] overflow-hidden">
+              <div data-reveal className="bg-steel relative aspect-[4/5] overflow-hidden">
                 <Image
                   data-parallax
                   src={media.welderPortrait.src}
@@ -153,7 +163,7 @@ export default function HomePage() {
               </div>
               <div
                 data-rise
-                className="bg-oxide absolute right-0 bottom-0 px-7 py-6 text-white sm:px-9 sm:py-8 lg:-right-10 lg:-bottom-10"
+                className="bg-brand absolute right-0 bottom-0 px-7 py-6 text-white sm:px-9 sm:py-8 lg:-right-10 lg:-bottom-10"
               >
                 <p className="label text-white/75">In Dahigaon since</p>
                 <p className="font-display mt-1 text-[clamp(3.5rem,7vw,6rem)] leading-none font-bold tracking-tight">
@@ -170,7 +180,7 @@ export default function HomePage() {
                   title={`A fabrication works you can rely on, since ${siteConfig.company.foundedYear}.`}
                 />
               </div>
-              <ol className="border-ink mt-12 border-t">
+              <ol className="border-navy mt-12 border-t">
                 {reasons.map((reason, i) => (
                   <li
                     key={reason.title}
@@ -178,13 +188,13 @@ export default function HomePage() {
                     className="border-rule group grid grid-cols-[3rem_1fr] gap-x-4 border-b py-6 sm:grid-cols-[4.5rem_1fr]"
                   >
                     <span
-                      className="font-display text-rule-strong group-hover:text-oxide text-3xl leading-none font-bold transition-colors sm:text-4xl"
+                      className="font-display text-rule-strong group-hover:text-brand text-3xl leading-none font-bold transition-colors sm:text-4xl"
                       aria-hidden="true"
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <h3 className="text-ink text-xl font-semibold">{reason.title}</h3>
+                      <h3 className="text-navy text-xl font-semibold">{reason.title}</h3>
                       <p className="text-graphite mt-1.5">{reason.text}</p>
                     </div>
                   </li>
@@ -195,7 +205,7 @@ export default function HomePage() {
         </section>
 
         {/* 04 — Industries */}
-        <section aria-labelledby="industries-title" className="bg-paper-deep py-20 sm:py-28">
+        <section aria-labelledby="industries-title" className="bg-steel py-20 sm:py-28">
           <div className="container-site">
             <div className="mb-14 grid grid-cols-1 gap-8 lg:mb-16 lg:grid-cols-12 lg:items-end lg:gap-12">
               <div data-rise className="lg:col-span-7">
@@ -214,7 +224,7 @@ export default function HomePage() {
                   {audiences.map((a) => (
                     <li
                       key={a}
-                      className="border-rule-strong text-ink-soft hover:border-ink border px-3.5 py-2 text-sm transition-colors"
+                      className="border-rule-strong text-navy-soft hover:border-navy border px-3.5 py-2 text-sm transition-colors"
                     >
                       {a}
                     </li>
@@ -229,7 +239,7 @@ export default function HomePage() {
         {/* 05 — Looking ahead */}
         <section
           aria-labelledby="vision-title"
-          className="bg-night relative isolate overflow-hidden"
+          className="bg-navy relative isolate overflow-hidden"
         >
           <Image
             data-parallax
@@ -240,7 +250,7 @@ export default function HomePage() {
             sizes="100vw"
             className="-z-10 scale-[1.2] object-cover opacity-55"
           />
-          <div className="from-night via-night/85 absolute inset-0 -z-10 bg-gradient-to-r to-transparent" />
+          <div className="from-navy via-navy/85 absolute inset-0 -z-10 bg-gradient-to-r to-transparent" />
           <div className="container-site py-28 sm:py-40">
             <div data-rise className="max-w-2xl">
               <SectionHeader

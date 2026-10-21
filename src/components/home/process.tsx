@@ -43,7 +43,7 @@ function ProcessVideo() {
 
   return (
     <figure>
-      <div className="bg-night-raised relative aspect-video overflow-hidden">
+      <div className="bg-navy-raised relative aspect-video overflow-hidden">
         <video
           ref={videoRef}
           className="absolute inset-0 h-full w-full object-cover"
@@ -101,7 +101,7 @@ export function Process() {
   );
 
   return (
-    <section aria-labelledby="process-title" className="bg-night text-on-night py-20 sm:py-28">
+    <section aria-labelledby="process-title" className="bg-navy text-on-navy py-20 sm:py-28">
       <div ref={scopeRef} className="container-site">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-end lg:gap-12">
           <div className="lg:col-span-5">
@@ -125,12 +125,12 @@ export function Process() {
         >
           {/* Track and progress: vertical on small screens, horizontal on large */}
           <span
-            className="bg-night-rule absolute top-0 bottom-0 left-4 w-px lg:top-4 lg:right-0 lg:bottom-auto lg:left-0 lg:h-px lg:w-auto"
+            className="bg-navy-rule absolute top-0 bottom-0 left-4 w-px lg:top-4 lg:right-0 lg:bottom-auto lg:left-0 lg:h-px lg:w-auto"
             aria-hidden="true"
           />
           <span
             data-progress
-            className="bg-oxide absolute top-0 bottom-0 left-4 w-px origin-top lg:top-4 lg:right-0 lg:bottom-auto lg:left-0 lg:h-px lg:w-auto lg:origin-left"
+            className="bg-brand absolute top-0 bottom-0 left-4 w-px origin-top lg:top-4 lg:right-0 lg:bottom-auto lg:left-0 lg:h-px lg:w-auto lg:origin-left"
             aria-hidden="true"
           />
           {steps.map((step, i) => (
@@ -139,12 +139,12 @@ export function Process() {
               data-step
               className="relative grid grid-cols-[2rem_1fr] gap-x-5 lg:block"
             >
-              <span className="bg-night border-night-rule text-on-night relative z-10 flex h-8 w-8 items-center justify-center border font-mono text-xs">
+              <span className="bg-navy border-navy-rule text-on-navy relative z-10 flex h-8 w-8 items-center justify-center border font-mono text-xs">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="lg:mt-6">
-                <h3 className="text-on-night text-lg font-semibold">{step.title}</h3>
-                <p className="text-on-night-muted mt-1.5 text-[0.92rem] leading-relaxed">
+                <h3 className="text-on-navy text-lg font-semibold">{step.title}</h3>
+                <p className="text-on-navy-muted mt-1.5 text-[0.92rem] leading-relaxed">
                   {step.text}
                 </p>
               </div>

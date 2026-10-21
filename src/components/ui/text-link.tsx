@@ -15,8 +15,8 @@ export function TextLink({ tone = "light", className, children, ...props }: Text
       className={cn(
         "group/link inline-flex items-center gap-2 border-b pb-1 text-[0.95rem] font-medium transition-colors",
         tone === "light"
-          ? "text-ink border-ink/30 hover:border-oxide hover:text-oxide"
-          : "text-on-night border-on-night/30 hover:border-on-night",
+          ? "text-navy border-navy/30 hover:border-brand hover:text-brand"
+          : "text-on-navy border-on-navy/30 hover:border-on-navy",
         className
       )}
       {...props}

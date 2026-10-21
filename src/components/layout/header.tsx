@@ -15,7 +15,7 @@ export function Wordmark({ tone = "light" }: { tone?: "light" | "dark" }) {
       <span
         className={cn(
           "font-display text-[1.35rem] font-bold tracking-[0.02em] uppercase [font-stretch:80%]",
-          tone === "light" ? "text-ink" : "text-on-night"
+          tone === "light" ? "text-navy" : "text-on-navy"
         )}
       >
         Automech
@@ -23,7 +23,7 @@ export function Wordmark({ tone = "light" }: { tone?: "light" | "dark" }) {
       <span
         className={cn(
           "label mt-1 text-[0.62rem] tracking-[0.24em]",
-          tone === "light" ? "text-graphite" : "text-on-night-muted"
+          tone === "light" ? "text-graphite" : "text-on-navy-muted"
         )}
       >
         Industries · Est. {siteConfig.company.foundedYear}
@@ -124,25 +124,25 @@ export function Header() {
   return (
     <>
       {/* Utility bar: scrolls away, desktop only */}
-      <div className="bg-night text-on-night-muted hidden md:block">
+      <div className="bg-navy border-navy-rule text-on-navy-muted hidden border-b md:block">
         <div className="container-site flex h-9 items-center justify-between gap-6 text-xs">
           <p className="flex items-center gap-5">
             <span>{siteConfig.company.location.fullAddressString}</span>
-            <span className="bg-night-rule h-3 w-px" aria-hidden="true" />
+            <span className="bg-navy-rule h-3 w-px" aria-hidden="true" />
             <span>Steel fabrication since {siteConfig.company.foundedYear}</span>
           </p>
           <p className="flex items-center gap-5">
             {phone && (
-              <a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-on-night">
+              <a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-on-navy">
                 {phone}
               </a>
             )}
             {email && (
-              <a href={`mailto:${email}`} className="hover:text-on-night">
+              <a href={`mailto:${email}`} className="hover:text-on-navy">
                 {email}
               </a>
             )}
-            <Link href="/request-quote" className="text-on-night hover:underline">
+            <Link href="/request-quote" className="text-on-navy hover:underline">
               Send us your drawings
             </Link>
           </p>
@@ -154,13 +154,13 @@ export function Header() {
         className={cn(
           "sticky top-0 z-50 w-full border-b transition-colors duration-300",
           isScrolled || mobileMenuOpen
-            ? "border-rule bg-paper/95 backdrop-blur-md"
-            : "bg-paper border-transparent"
+            ? "border-navy-rule bg-navy/95 backdrop-blur-md"
+            : "bg-navy border-transparent"
         )}
       >
         <div className="container-site flex h-[var(--header-height)] items-center justify-between gap-6">
           <Link href="/" aria-label={`${siteConfig.name}, home`} className="shrink-0">
-            <Wordmark />
+            <Wordmark tone="dark" />
           </Link>
 
           <nav className="hidden lg:block" aria-label="Main">
@@ -174,14 +174,16 @@ export function Header() {
                       aria-current={isActive ? "page" : undefined}
                       className={cn(
                         "relative px-3 py-2 text-[0.94rem] transition-colors",
-                        isActive ? "text-ink font-medium" : "text-graphite hover:text-ink"
+                        isActive
+                          ? "text-on-navy font-medium"
+                          : "text-on-navy-muted hover:text-on-navy"
                       )}
                     >
                       {item.title}
                       {isActive && (
                         <motion.span
                           layoutId="nav-underline"
-                          className="bg-oxide absolute inset-x-3 -bottom-[1.2rem] h-0.5"
+                          className="bg-brand-light absolute inset-x-3 -bottom-[1.2rem] h-0.5"
                           transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
                           aria-hidden="true"
                         />
@@ -202,7 +204,7 @@ export function Header() {
             <button
               ref={menuTriggerRef}
               type="button"
-              className="text-ink hover:bg-ink/5 inline-flex h-10 items-center gap-2.5 px-2 lg:hidden"
+              className="text-on-navy inline-flex h-10 items-center gap-2.5 px-2 hover:bg-white/10 lg:hidden"
               aria-controls="mobile-nav-panel"
               aria-expanded={mobileMenuOpen}
               onClick={() => {
@@ -214,13 +216,13 @@ export function Header() {
               <span className="relative block h-3 w-5" aria-hidden="true">
                 <span
                   className={cn(
-                    "bg-ink absolute left-0 h-[1.5px] w-full transition-transform duration-300",
+                    "bg-on-navy absolute left-0 h-[1.5px] w-full transition-transform duration-300",
                     mobileMenuOpen ? "top-1.5 rotate-45" : "top-0"
                   )}
                 />
                 <span
                   className={cn(
-                    "bg-ink absolute left-0 h-[1.5px] w-full transition-transform duration-300",
+                    "bg-on-navy absolute left-0 h-[1.5px] w-full transition-transform duration-300",
                     mobileMenuOpen ? "top-1.5 -rotate-45" : "top-3"
                   )}
                 />
@@ -243,7 +245,7 @@ export function Header() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             style={panelTop !== null ? { top: panelTop } : undefined}
-            className="bg-paper fixed inset-x-0 top-[var(--header-height)] bottom-0 z-40 flex flex-col overflow-y-auto lg:hidden"
+            className="fixed inset-x-0 top-[var(--header-height)] bottom-0 z-40 flex flex-col overflow-y-auto bg-white lg:hidden"
           >
             <nav aria-label="Mobile" className="container-site flex-1 pt-4">
               <ul>
@@ -266,7 +268,7 @@ export function Header() {
                         <span
                           className={cn(
                             "font-display text-[1.75rem] font-semibold",
-                            isActive ? "text-oxide" : "text-ink"
+                            isActive ? "text-brand" : "text-navy"
                           )}
                         >
                           {item.title}
@@ -281,14 +283,34 @@ export function Header() {
               </ul>
             </nav>
 
-            <div className="container-site border-rule bg-paper-deep border-t py-6">
+            <div className="container-site border-rule bg-steel border-t py-6">
               <ButtonLink href="/request-quote" onClick={closeMenu} size="lg" className="w-full">
                 Request a quote
                 <ButtonArrow />
               </ButtonLink>
-              <p className="text-graphite mt-4 text-sm">
-                {siteConfig.company.location.fullAddressString}
-              </p>
+              <div className="mt-4 space-y-1.5 text-sm">
+                {phone && (
+                  <a
+                    href={`tel:${phone.replace(/\s/g, "")}`}
+                    className="text-navy hover:text-brand flex items-center gap-2 font-medium transition-colors"
+                  >
+                    <span className="text-graphite text-xs">Tel:</span>
+                    <span>{phone}</span>
+                  </a>
+                )}
+                {email && (
+                  <a
+                    href={`mailto:${email}`}
+                    className="text-navy hover:text-brand flex items-center gap-2 font-medium transition-colors"
+                  >
+                    <span className="text-graphite text-xs">Email:</span>
+                    <span>{email}</span>
+                  </a>
+                )}
+                <p className="text-graphite pt-1 text-xs">
+                  {siteConfig.company.location.fullAddressString}
+                </p>
+              </div>
             </div>
           </motion.div>
         )}

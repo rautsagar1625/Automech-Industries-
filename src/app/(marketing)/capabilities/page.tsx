@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Capabilities",
   description:
     "Equipment support structures, boiler and filtration support structures, platforms, walkways, stairs and railings, custom fabrication to drawing, and on-site installation.",
+  alternates: {
+    canonical: "/capabilities",
+  },
 };
 
 /** Maps each capability to the matching enquiry category for a pre-filled quote form. */
@@ -75,11 +78,11 @@ export default function CapabilitiesPage() {
               >
                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-9 lg:items-end lg:gap-10">
                   <div className="lg:col-span-5">
-                    <p className="label text-oxide">
+                    <p className="label text-brand">
                       {String(i + 1).padStart(2, "0")} /{" "}
                       {String(capabilitiesData.length).padStart(2, "0")}
                     </p>
-                    <h2 id={`${item.slug}-title`} className="type-h2 text-ink mt-4">
+                    <h2 id={`${item.slug}-title`} className="type-h2 text-navy mt-4">
                       {item.title}
                     </h2>
                   </div>
@@ -97,25 +100,25 @@ export default function CapabilitiesPage() {
 
                 <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
                   <div>
-                    <h3 className="label text-ink font-sans">Typical scope</h3>
-                    <ul className="border-ink mt-4 border-t" role="list">
+                    <h3 className="label text-navy font-sans">Typical scope</h3>
+                    <ul className="border-navy mt-4 border-t" role="list">
                       {item.detailedScope.map((line) => (
-                        <li key={line} className="border-rule text-ink-soft border-b py-3.5">
+                        <li key={line} className="border-rule text-navy-soft border-b py-3.5">
                           {line}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h3 className="label text-ink font-sans">How we work</h3>
-                    <ul className="border-ink mt-4 border-t" role="list">
+                    <h3 className="label text-navy font-sans">How we work</h3>
+                    <ul className="border-navy mt-4 border-t" role="list">
                       {item.keyFeatures.map((line) => (
                         <li
                           key={line}
-                          className="border-rule text-ink-soft flex gap-3 border-b py-3.5"
+                          className="border-rule text-navy-soft flex gap-3 border-b py-3.5"
                         >
                           <span
-                            className="bg-oxide mt-[0.6rem] h-1.5 w-1.5 shrink-0"
+                            className="bg-brand mt-[0.6rem] h-1.5 w-1.5 shrink-0"
                             aria-hidden="true"
                           />
                           {line}
@@ -126,8 +129,8 @@ export default function CapabilitiesPage() {
                 </div>
 
                 <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="border-oxide text-ink-soft max-w-2xl border-l-2 pl-5 text-[0.95rem]">
-                    <span className="text-ink font-semibold">Scope note. </span>
+                  <p className="border-brand text-navy-soft max-w-2xl border-l-2 pl-5 text-[0.95rem]">
+                    <span className="text-navy font-semibold">Scope note. </span>
                     {item.scopeBoundaries}
                   </p>
                   <ButtonLink
@@ -145,7 +148,7 @@ export default function CapabilitiesPage() {
           })}
 
           <p className="text-graphite py-14 text-[0.95rem]">
-            <span className="text-ink font-semibold">Our scope in one line. </span>
+            <span className="text-navy font-semibold">Our scope in one line. </span>
             {siteConfig.company.scopeStatement}
           </p>
         </div>

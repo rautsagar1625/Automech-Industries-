@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ButtonArrow, ButtonLink } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "404 - Page Not Found",
+  description: "The requested page could not be found on Automech Industries.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function NotFound() {
   return (
@@ -8,8 +18,8 @@ export default function NotFound() {
       <Header />
       <main id="main-content" tabIndex={-1} className="flex flex-1 items-center outline-none">
         <div className="container-site py-24">
-          <p className="label text-oxide">Error 404</p>
-          <h1 className="type-h1 text-ink mt-5 max-w-2xl">This page could not be found.</h1>
+          <p className="label text-brand">Error 404</p>
+          <h1 className="type-h1 text-navy mt-5 max-w-2xl">This page could not be found.</h1>
           <p className="type-lead text-graphite mt-5 max-w-xl">
             The page may have moved or no longer exists.
           </p>

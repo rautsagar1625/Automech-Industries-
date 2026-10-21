@@ -54,7 +54,7 @@ export function CapabilityIndex() {
             <Link
               href={`/capabilities#${item.slug}`}
               data-reveal
-              className="group/link bg-night relative block aspect-[4/3] overflow-hidden sm:aspect-[5/4] lg:aspect-auto lg:h-[28rem]"
+              className="group/link bg-navy relative block aspect-[4/3] overflow-hidden sm:aspect-[5/4] lg:aspect-auto lg:h-[28rem]"
             >
               <Image
                 src={image.src}
@@ -65,11 +65,11 @@ export function CapabilityIndex() {
                 className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/link:scale-[1.06]"
               />
               <div
-                className="from-night/90 via-night/35 absolute inset-0 bg-gradient-to-t to-transparent"
+                className="from-navy/90 via-navy/35 absolute inset-0 bg-gradient-to-t to-transparent"
                 aria-hidden="true"
               />
               <div
-                className="bg-oxide absolute inset-0 opacity-0 mix-blend-multiply transition-opacity duration-500 group-hover/link:opacity-40"
+                className="bg-brand absolute inset-0 opacity-0 mix-blend-multiply transition-opacity duration-500 group-hover/link:opacity-40"
                 aria-hidden="true"
               />
               <StockTag className="top-3 right-3 bottom-auto left-auto" />
@@ -81,7 +81,7 @@ export function CapabilityIndex() {
                     {summaries[item.id]}
                   </p>
                 </div>
-                <span className="bg-paper text-ink group-hover/link:bg-ink flex h-12 w-12 shrink-0 items-center justify-center transition-all duration-300 group-hover/link:-rotate-45 group-hover/link:text-white">
+                <span className="text-navy group-hover/link:bg-navy flex h-12 w-12 shrink-0 items-center justify-center bg-white transition-all duration-300 group-hover/link:-rotate-45 group-hover/link:text-white">
                   <ButtonArrow />
                 </span>
               </div>

@@ -78,12 +78,13 @@ Design tokens are codified in `src/app/globals.css` using CSS custom properties 
 
 ### Color Palette
 
-- **Graphite (`--graphite`: `#080D13`)**: Primary deep background creating an industrial aesthetic.
-- **Secondary Surface (`--surface-secondary`: `#111923`)**: Raised container and card background.
-- **Structural Slate (`--slate`: `#283A4C`)**: Hairline borders, structural framing, and blueprint grid.
-- **Industrial Orange (`--industrial-orange`: `#E76B30`)**: High-visibility safety accent, active states, and CTAs.
-- **Steel White (`--steel-white`: `#E5EAF0`)**: Metallic neutral for high-contrast typography (>13:1 ratio on graphite).
-- **Pure White (`--white`: `#FFFFFF`)**: Crisp highlight for primary headings and emphasis.
+- **Deep navy (`--navy`: `#14283F`)**: Header, footer, dark sections and main headings (`text-navy`, `bg-navy`).
+- **White (`--white`: `#FFFFFF`)**: Main page background.
+- **Light steel grey (`--steel`: `#F1F4F7`)**: Alternate sections and cards (`bg-steel`, `bg-card`).
+- **Graphite (`--graphite`: `#263341`)**: Body text.
+- **Engineering blue (`--brand`: `#1765AD`)**: Request a Quote buttons, links and highlights. `--brand-light` (`#7CB4E8`) is the variant for highlights on navy.
+- **On navy (`--on-navy`, `--on-navy-muted`)**: Text on navy surfaces; `--navy-raised` and `--navy-rule` for raised panels and dividers on navy.
+- **Rules (`--rule`, `--rule-strong`)**: Hairline borders on light surfaces.
 
 ### Fluid Typography System
 

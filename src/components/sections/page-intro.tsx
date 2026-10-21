@@ -18,11 +18,11 @@ export function PageIntro({ eyebrow, title, lead, image, children }: PageIntroPr
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <p className="label text-graphite animate-rise flex items-center gap-3">
-              <span className="bg-oxide inline-block h-2 w-2" aria-hidden="true" />
+              <span className="bg-brand inline-block h-2 w-2" aria-hidden="true" />
               {eyebrow}
             </p>
             <h1
-              className="type-h1 text-ink animate-rise mt-6"
+              className="type-h1 text-navy animate-rise mt-6"
               style={{ "--delay": "80ms" } as React.CSSProperties}
             >
               {title}

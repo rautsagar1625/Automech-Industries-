@@ -43,6 +43,10 @@ export const EnquirySchema = z.object({
     message:
       "Please acknowledge that structural fabrication and support scope applies (not complete OEM equipment).",
   }),
+  privacyConsent: z.boolean().refine((val) => val === true, {
+    message: "Please agree to the privacy policy to submit your enquiry.",
+  }),
+  honeypot: z.string().optional(),
 });
 
 export type EnquiryFormValues = z.infer<typeof EnquirySchema>;
@@ -50,5 +54,6 @@ export type EnquiryFormValues = z.infer<typeof EnquirySchema>;
 export interface EnquirySubmissionState {
   status: "idle" | "submitting" | "success" | "error";
   message?: string;
+  referenceId?: string;
   errors?: Record<string, string[]>;
 }

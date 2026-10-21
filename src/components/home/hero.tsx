@@ -41,25 +41,25 @@ export function Hero() {
     <section
       ref={sectionRef}
       aria-labelledby="hero-title"
-      className="bg-night relative isolate flex min-h-[640px] flex-col overflow-hidden text-white md:h-[calc(100svh-var(--header-height)-2.25rem)] md:min-h-[680px]"
+      className="bg-navy relative isolate flex min-h-[640px] flex-col overflow-hidden text-white md:h-[calc(100svh-var(--header-height)-2.25rem)] md:min-h-[680px]"
     >
       <div className="animate-settle absolute inset-0 -z-10">
         <HeroVideo />
       </div>
       {/* Legibility: darker on the left and bottom, where the copy sits */}
       <div
-        className="from-night/90 via-night/55 pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r to-transparent"
+        className="from-navy/90 via-navy/55 pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r to-transparent"
         aria-hidden="true"
       />
       <div
-        className="from-night pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-gradient-to-t to-transparent"
+        className="from-navy pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-gradient-to-t to-transparent"
         aria-hidden="true"
       />
 
       <div data-hero-copy className="container-site flex flex-1 flex-col justify-end pt-24 pb-10">
         <div className="animate-rise flex flex-wrap items-center gap-x-4 gap-y-2">
           <p className="label flex items-center gap-3 text-white/80">
-            <span className="bg-oxide inline-block h-2 w-2" aria-hidden="true" />
+            <span className="bg-brand inline-block h-2 w-2" aria-hidden="true" />
             Industrial steel fabrication · India
           </p>
         </div>
@@ -69,7 +69,7 @@ export function Hero() {
             Steel structures,
           </span>
           <span className="animate-rise block" style={delay(200)}>
-            built to your <span className="text-[#e3876f]">drawings.</span>
+            built to your <span className="text-brand-light">drawings.</span>
           </span>
         </h1>
 
