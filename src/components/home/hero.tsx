@@ -1,17 +1,22 @@
 "use client";
 
 import * as React from "react";
-import { siteConfig } from "@/config/site";
 import { HeroVideo } from "@/components/home/hero-video";
 import { ButtonArrow, ButtonLink } from "@/components/ui/button";
 import { useSafeGSAP } from "@/hooks/use-gsap-animation";
 import { gsap } from "@/lib/animations/gsap";
 
 const facts = [
-  { term: `Since ${siteConfig.company.foundedYear}`, detail: "Operating as Automech Industries" },
-  { term: "Dahigaon works", detail: "Solapur district, Maharashtra" },
-  { term: "Built to drawing", detail: "Your drawings and specifications" },
-  { term: "Workshop to site", detail: "Fabrication and installation" },
+  { term: "Since 1997", detail: "Operating under the Automech Industries name" },
+  { term: "Based in Dahigaon", detail: "Solapur district, Maharashtra" },
+  {
+    term: "Made to Your Requirements",
+    detail: "Manufactured to your drawings and specifications",
+  },
+  {
+    term: "Manufacturing & Assembly",
+    detail: "On-site setup available by agreement",
+  },
 ];
 
 function delay(ms: number) {
@@ -41,7 +46,7 @@ export function Hero() {
     <section
       ref={sectionRef}
       aria-labelledby="hero-title"
-      className="bg-navy relative isolate flex min-h-[640px] flex-col overflow-hidden text-white md:h-[calc(100svh-var(--header-height)-2.25rem)] md:min-h-[680px]"
+      className="bg-navy relative isolate flex min-h-[680px] flex-col overflow-hidden text-white md:h-[calc(100svh-var(--header-height)-2.25rem)] md:min-h-[680px]"
     >
       <div className="animate-settle absolute inset-0 -z-10">
         <HeroVideo />
@@ -56,35 +61,47 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <div data-hero-copy className="container-site flex flex-1 flex-col justify-end pt-24 pb-10">
+      <div
+        data-hero-copy
+        className="container-site flex flex-1 flex-col justify-end pt-20 pb-8 sm:pt-24 sm:pb-10"
+      >
         <div className="animate-rise flex flex-wrap items-center gap-x-4 gap-y-2">
           <p className="label flex items-center gap-3 text-white/80">
             <span className="bg-brand inline-block h-2 w-2" aria-hidden="true" />
-            Industrial steel fabrication · India
+            Industrial Manufacturing · India
           </p>
         </div>
 
         <h1 id="hero-title" className="type-display mt-6 max-w-5xl">
           <span className="animate-rise block" style={delay(100)}>
-            Steel structures,
+            Industrial Manufacturing.
           </span>
           <span className="animate-rise block" style={delay(200)}>
-            built to your <span className="text-brand-light">drawings.</span>
+            Precision in Every <span className="text-brand-light">Build.</span>
           </span>
         </h1>
 
         <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <p className="type-lead animate-rise max-w-xl text-white/80" style={delay(320)}>
-            Equipment support structures, platforms, walkways, stairs and railings for industrial
-            plants. Fabricated in Dahigaon and installed at your site.
-          </p>
+          <div
+            className="type-lead animate-rise max-w-xl space-y-2.5 text-white/80"
+            style={delay(320)}
+          >
+            <p>
+              We manufacture steel structures, equipment supports, platforms, walkways, stairs and
+              railings for industrial plants. We also undertake custom machinery manufacturing and
+              assembly.
+            </p>
+            <p className="text-[0.95rem] leading-relaxed text-white/65">
+              Based in Dahigaon, Maharashtra. Serving projects across India.
+            </p>
+          </div>
           <div className="animate-rise flex flex-wrap gap-3" style={delay(420)}>
             <ButtonLink href="/request-quote" size="lg">
-              Request a quote
+              Request a Quote
               <ButtonArrow />
             </ButtonLink>
             <ButtonLink href="/capabilities" variant="outline-light" size="lg">
-              What we fabricate
+              Explore Our Capabilities
             </ButtonLink>
           </div>
         </div>
