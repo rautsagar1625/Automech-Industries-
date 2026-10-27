@@ -22,9 +22,6 @@ import { ScrollWords } from "@/components/motion/scroll-words";
 import { QuoteBand } from "@/components/sections/quote-band";
 import { SectionHeader } from "@/components/ui/section-header";
 import { TextLink } from "@/components/ui/text-link";
-
-const trades = ["Cutting", "Bending", "Welding", "Painting", "Inspection", "Installation"];
-
 const strip = [
   media.cuttingMachine,
   media.platformStairGrating,
@@ -67,21 +64,13 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Trades band */}
-      <div className="bg-brand py-5 text-white sm:py-6" aria-label="What happens in our workshop">
-        <Marquee duration={32}>
-          {trades.map((t) => (
-            <span
-              key={t}
-              className="font-display flex items-center text-[clamp(1.75rem,3.6vw,3.25rem)] leading-none font-bold tracking-tight uppercase [font-stretch:85%]"
-            >
-              <span className="px-6 sm:px-10">{t}</span>
-              <svg viewBox="0 0 10 10" className="h-3 w-3 text-white/60" aria-hidden="true">
-                <path d="M5 0l5 5-5 5-5-5z" fill="currentColor" />
-              </svg>
-            </span>
-          ))}
-        </Marquee>
+      {/* Stationary brand statement */}
+      <div className="bg-brand py-4.5 text-white sm:py-5">
+        <div className="container-site flex items-center justify-center text-center">
+          <p className="font-display text-[clamp(1.05rem,2.2vw,1.35rem)] font-semibold tracking-wide text-white">
+            Accuracy in Every Detail. Quality in Every Build.
+          </p>
+        </div>
       </div>
 
       <ScrollReveal>
