@@ -46,13 +46,16 @@ export default function IndustriesPage() {
       {/* Who buys from us */}
       <section aria-label="Customer groups" className="pb-16 sm:pb-20">
         <div className="container-site">
-          <ul className="border-navy grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-4" role="list">
+          <ul
+            className="border-navy grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-4"
+            role="list"
+          >
             {audiences.map((a) => (
               <li
                 key={a.title}
-                className="border-rule border-b py-6 sm:px-6 sm:border-l sm:first:border-l-0 sm:first:pl-0 lg:border-b-0"
+                className="border-rule border-b py-6 sm:border-l sm:px-6 sm:first:border-l-0 sm:first:pl-0 lg:border-b-0"
               >
-                <h2 className="text-navy text-base sm:text-lg font-semibold">{a.title}</h2>
+                <h2 className="text-navy text-base font-semibold sm:text-lg">{a.title}</h2>
                 <p className="text-graphite mt-1.5 text-sm">{a.text}</p>
               </li>
             ))}

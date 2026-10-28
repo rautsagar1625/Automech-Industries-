@@ -110,7 +110,10 @@ export function Process() {
   );
 
   return (
-    <section aria-labelledby="process-title" className="bg-navy text-on-navy py-12 sm:py-20 lg:py-28">
+    <section
+      aria-labelledby="process-title"
+      className="bg-navy text-on-navy py-12 sm:py-20 lg:py-28"
+    >
       <div ref={scopeRef} className="container-site">
         <div className="grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-12 lg:items-end lg:gap-12">
           <div className="lg:col-span-5">
@@ -152,8 +155,8 @@ export function Process() {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="lg:mt-6">
-                <h3 className="text-on-navy text-base sm:text-lg font-semibold">{step.title}</h3>
-                <p className="text-on-navy-muted mt-1 text-sm sm:mt-1.5 sm:text-[0.92rem] leading-relaxed">
+                <h3 className="text-on-navy text-base font-semibold sm:text-lg">{step.title}</h3>
+                <p className="text-on-navy-muted mt-1 text-sm leading-relaxed sm:mt-1.5 sm:text-[0.92rem]">
                   {step.text}
                 </p>
               </div>

@@ -74,7 +74,10 @@ export function SectorShowcase() {
                   {industry.title}
                 </span>
                 <ButtonArrow
-                  className={cn("h-4 w-4 shrink-0 sm:h-5 sm:w-5", isActive ? "text-brand" : "text-rule-strong")}
+                  className={cn(
+                    "h-4 w-4 shrink-0 sm:h-5 sm:w-5",
+                    isActive ? "text-brand" : "text-rule-strong"
+                  )}
                 />
               </Link>
             </li>

@@ -116,8 +116,7 @@ export const capabilitiesData: CapabilityItem[] = [
     slug: "site-setup-assembly",
     title: "On-Site Assembly & Installation",
     structuralCategory: "site-services",
-    shortDescription:
-      "On-site structural assembly, positioning, alignment, bolting and welding.",
+    shortDescription: "On-site structural assembly, positioning, alignment, bolting and welding.",
     detailedScope: [
       "Pre-assembly layout and trial assembly at plant or site ground level",
       "Erection of fabricated structural columns, trusses, and platforms",

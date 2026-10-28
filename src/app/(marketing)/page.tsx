@@ -154,10 +154,10 @@ export default function HomePage() {
                 data-rise
                 className="bg-brand absolute right-0 bottom-0 px-6 py-5 text-white sm:px-9 sm:py-8 lg:-right-10 lg:-bottom-10"
               >
-                <p className="label text-white/80 text-[0.65rem] sm:text-xs">
+                <p className="label text-[0.65rem] text-white/80 sm:text-xs">
                   Automech Industries since
                 </p>
-                <p className="font-display mt-0.5 text-3xl font-bold tracking-tight sm:mt-1 sm:text-[clamp(3.5rem,7vw,6rem)] leading-none">
+                <p className="font-display mt-0.5 text-3xl leading-none font-bold tracking-tight sm:mt-1 sm:text-[clamp(3.5rem,7vw,6rem)]">
                   {siteConfig.company.foundedYear}
                 </p>
               </div>
@@ -171,8 +171,7 @@ export default function HomePage() {
                   title={
                     <>
                       A Commitment to Quality.
-                      <br />
-                      A Focus on Precision.
+                      <br />A Focus on Precision.
                     </>
                   }
                 />
@@ -192,7 +191,9 @@ export default function HomePage() {
                     </span>
                     <div>
                       <h3 className="text-navy text-lg font-semibold sm:text-xl">{reason.title}</h3>
-                      <p className="text-graphite mt-1 text-sm sm:mt-1.5 sm:text-base leading-relaxed">{reason.text}</p>
+                      <p className="text-graphite mt-1 text-sm leading-relaxed sm:mt-1.5 sm:text-base">
+                        {reason.text}
+                      </p>
                     </div>
                   </li>
                 ))}
@@ -214,8 +215,9 @@ export default function HomePage() {
                 />
               </div>
               <div className="lg:col-span-5">
-                <p className="text-graphite text-base sm:text-lg leading-relaxed">
-                  We manufacture steel structures, equipment supports and custom assemblies for industrial projects, with a focus on quality, precision and timely delivery.
+                <p className="text-graphite text-base leading-relaxed sm:text-lg">
+                  We manufacture steel structures, equipment supports and custom assemblies for
+                  industrial projects, with a focus on quality, precision and timely delivery.
                 </p>
                 <ul className="mt-4 flex flex-wrap gap-2 sm:mt-5" role="list">
                   {audiences.map((a) => (
