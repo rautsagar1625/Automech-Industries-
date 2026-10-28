@@ -103,6 +103,13 @@ export default function RootLayout({
       postalCode: siteConfig.company.location.postalCode,
       addressCountry: "IN",
     },
+    ...(siteConfig.company.location.coordinates && {
+      geo: {
+        "@type": "GeoCoordinates",
+        ...siteConfig.company.location.coordinates,
+      },
+    }),
+    hasMap: siteConfig.company.location.mapUrl,
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

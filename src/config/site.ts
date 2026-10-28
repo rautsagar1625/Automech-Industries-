@@ -7,7 +7,7 @@ import type { SiteConfig } from "@/types";
 export const siteConfig: SiteConfig = {
   name: "Automech Industries",
   shortName: "Automech",
-  url: "https://automechindustries.com",
+  url: "https://automechindustries.in",
   tagline: "Industrial steel fabrication and installation",
   description:
     "Industrial steel fabrication from Dahigaon, Solapur district, Maharashtra. Equipment support structures, platforms, walkways, stairs and railings, built to your drawings and installed on site. Operating since 1997.",
@@ -196,7 +196,7 @@ export const siteConfig: SiteConfig = {
     contact: {
       phone: "+91 94220 28540",
       whatsapp: "+91 94220 28540",
-      email: "contact@automechindustries.com",
+      email: "contact@automechindustries.in",
     },
     location: {
       village: "Dahigaon",
@@ -205,6 +205,10 @@ export const siteConfig: SiteConfig = {
       postalCode: "413401",
       country: "India",
       fullAddressString: "Dahigaon, Solapur District, Maharashtra 413401, India",
+      mapUrl: "https://maps.google.com/?cid=4446693415291422969",
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4670.536192871224!2d74.73552027591869!3d17.944400286518515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc391c5e3ffcab5%3A0x3db5d41a038388f9!2sAutomech%20Industries!5e1!3m2!1sen!2sin!4v1793176928326!5m2!1sen!2sin",
+      coordinates: { latitude: 17.9444, longitude: 74.7355 },
     },
     inquiryNotice:
       "For procurement inquiries, structural drawing submissions, and bill of quantities reviews, please submit your requirements through our Request a Quote portal or schedule an appointment with our plant office.",

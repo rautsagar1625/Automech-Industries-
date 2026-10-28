@@ -113,7 +113,7 @@ export default async function Image() {
         <div style={{ display: "flex" }}>
           Continuous operation since 1997 · Works in Dahigaon, Solapur
         </div>
-        <div style={{ display: "flex" }}>automechindustries.com</div>
+        <div style={{ display: "flex" }}>automechindustries.in</div>
       </div>
     </div>,
     {

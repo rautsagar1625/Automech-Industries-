@@ -17,9 +17,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   const { company } = siteConfig;
   const { phone, whatsapp, email } = company.contact;
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    company.location.fullAddressString
-  )}`;
+  const mapsUrl =
+    company.location.mapUrl ??
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      company.location.fullAddressString
+    )}`;
 
   const channels = [
     phone && { label: "Phone", value: phone, href: `tel:${phone.replace(/\s/g, "")}` },
@@ -40,7 +42,7 @@ export default function ContactPage() {
         image={media.tanksStairs}
       />
 
-      <section aria-label="Contact details" className="pb-20 sm:pb-28">
+      <section aria-label="Contact details" className="pb-16 sm:pb-20">
         <div className="container-site grid grid-cols-1 gap-10 lg:grid-cols-2">
           <div className="border-navy border-t pt-8">
             <h2 className="label text-graphite font-sans">Works</h2>
@@ -101,6 +103,31 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {company.location.mapEmbedUrl && (
+        <section aria-labelledby="map-title" className="pb-20 sm:pb-28">
+          <div className="container-site">
+            <div className="border-navy flex flex-wrap items-baseline justify-between gap-4 border-t pt-8">
+              <h2 id="map-title" className="type-h3 text-navy">
+                Find the works
+              </h2>
+              <TextLink href={mapsUrl} target="_blank" rel="noopener noreferrer">
+                Get directions
+              </TextLink>
+            </div>
+            <div className="bg-steel border-rule relative mt-8 aspect-[4/3] overflow-hidden border sm:aspect-[16/7]">
+              <iframe
+                src={company.location.mapEmbedUrl}
+                title={`Map showing ${company.name}, ${company.location.fullAddressString}`}
+                className="absolute inset-0 h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }

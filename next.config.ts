@@ -35,6 +35,7 @@ const securityHeaders = [
       "img-src 'self' data: blob: https:",
       "media-src 'self' blob: https:",
       "connect-src 'self'",
+      "frame-src https://www.google.com",
       "frame-ancestors 'none'",
       "object-src 'none'",
       "base-uri 'self'",

@@ -24,6 +24,11 @@ export interface BusinessLocation {
   postalCode?: string;
   country: string;
   fullAddressString: string;
+  /** Google Maps place link for the works */
+  mapUrl?: string;
+  /** Google Maps embed URL (Share > Embed a map) */
+  mapEmbedUrl?: string;
+  coordinates?: { latitude: number; longitude: number };
 }
 
 export interface CompanyMetadata {
