@@ -67,27 +67,27 @@ export const siteConfig: SiteConfig = {
       title: "Capabilities",
       items: [
         {
+          title: "Equipment Frames & Skids",
+          href: "/capabilities#equipment-support-frames",
+        },
+        {
+          title: "Platforms, Stairs & Railings",
+          href: "/capabilities#platforms-railings-stairs",
+        },
+        {
           title: "Boiler Support Structures",
           href: "/capabilities#boiler-support-structures",
         },
         {
-          title: "Filtration Support Structures",
+          title: "Filtration System Structures",
           href: "/capabilities#filtration-support-structures",
         },
         {
-          title: "Platforms, Railings & Stairs",
-          href: "/capabilities#platforms-railings-stairs",
-        },
-        {
-          title: "Equipment Support Frames",
-          href: "/capabilities#equipment-support-frames",
-        },
-        {
-          title: "Custom Fabrication",
+          title: "Custom Components & Assemblies",
           href: "/capabilities#custom-fabrication",
         },
         {
-          title: "On-Site Installation",
+          title: "On-Site Assembly & Installation",
           href: "/capabilities#site-setup-assembly",
         },
       ],
@@ -121,24 +121,24 @@ export const siteConfig: SiteConfig = {
       title: "Sectors",
       items: [
         {
+          title: "Sugar & Cement Plants",
+          href: "/industries#sugar-and-cement",
+        },
+        {
+          title: "Chemical Processing & Refineries",
+          href: "/industries#chemical-and-refineries",
+        },
+        {
           title: "Power & Energy",
           href: "/industries#power-and-energy",
         },
         {
-          title: "Chemical & Process",
-          href: "/industries#chemical-and-process",
+          title: "Industrial Filtration Systems",
+          href: "/industries#industrial-filtration",
         },
         {
-          title: "Cement & Bulk Materials",
-          href: "/industries#cement-and-minerals",
-        },
-        {
-          title: "Air Pollution Control",
-          href: "/industries#environmental-and-filtration",
-        },
-        {
-          title: "General Manufacturing",
-          href: "/industries#general-manufacturing",
+          title: "Machinery & Manufacturing",
+          href: "/industries#machinery-manufacturing",
         },
       ],
     },

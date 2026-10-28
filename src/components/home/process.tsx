@@ -9,13 +9,22 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { gsap } from "@/lib/animations/gsap";
 
 const steps = [
-  { title: "Drawing review", text: "We study your drawings and agree the scope with you." },
-  { title: "Cutting", text: "Steel sections and plates are cut to size." },
-  { title: "Bending", text: "Parts are bent and formed to the drawing." },
-  { title: "Welding", text: "Members are fitted up and welded into assemblies." },
-  { title: "Painting", text: "Surfaces are cleaned and painted as specified." },
-  { title: "Inspection", text: "Dimensions and welds are checked against the drawing." },
-  { title: "Installation", text: "Delivered and, where required, erected at your site." },
+  {
+    title: "Project Review",
+    text: "Reviewing drawings, quantities and delivery requirements.",
+  },
+  {
+    title: "Manufacturing & Assembly",
+    text: "Careful planning and precise manufacturing.",
+  },
+  {
+    title: "Finishing & Inspection",
+    text: "Checking dimensions, finish and workmanship.",
+  },
+  {
+    title: "Delivery & Installation",
+    text: "Coordinating delivery and on-site installation to keep your project on schedule.",
+  },
 ];
 
 /** Muted background loop that only plays while visible. */
@@ -101,17 +110,17 @@ export function Process() {
   );
 
   return (
-    <section aria-labelledby="process-title" className="bg-navy text-on-navy py-20 sm:py-28">
+    <section aria-labelledby="process-title" className="bg-navy text-on-navy py-12 sm:py-20 lg:py-28">
       <div ref={scopeRef} className="container-site">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-end lg:gap-12">
+        <div className="grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-12 lg:items-end lg:gap-12">
           <div className="lg:col-span-5">
             <SectionHeader
               index="02"
-              eyebrow="How we work"
+              eyebrow="OUR PROCESS"
               tone="dark"
               id="process-title"
-              title="From your drawing to your site"
-              description="Every job follows the same clear sequence, so you know what happens at each stage."
+              title="Quality and Precision at Every Stage."
+              description="From reviewing your requirements to installation, we focus on accurate work and timely completion."
             />
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
@@ -121,7 +130,7 @@ export function Process() {
 
         <ol
           data-steps
-          className="relative mt-16 grid grid-cols-1 gap-y-10 lg:mt-24 lg:grid-cols-7 lg:gap-x-6"
+          className="relative mt-10 grid grid-cols-1 gap-y-6 sm:mt-14 sm:gap-y-8 lg:mt-20 lg:grid-cols-4 lg:gap-x-8"
         >
           {/* Track and progress: vertical on small screens, horizontal on large */}
           <span
@@ -137,14 +146,14 @@ export function Process() {
             <li
               key={step.title}
               data-step
-              className="relative grid grid-cols-[2rem_1fr] gap-x-5 lg:block"
+              className="relative grid grid-cols-[2rem_1fr] gap-x-4 sm:gap-x-5 lg:block"
             >
               <span className="bg-navy border-navy-rule text-on-navy relative z-10 flex h-8 w-8 items-center justify-center border font-mono text-xs">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="lg:mt-6">
-                <h3 className="text-on-navy text-lg font-semibold">{step.title}</h3>
-                <p className="text-on-navy-muted mt-1.5 text-[0.92rem] leading-relaxed">
+                <h3 className="text-on-navy text-base sm:text-lg font-semibold">{step.title}</h3>
+                <p className="text-on-navy-muted mt-1 text-sm sm:mt-1.5 sm:text-[0.92rem] leading-relaxed">
                   {step.text}
                 </p>
               </div>

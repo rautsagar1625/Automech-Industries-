@@ -68,7 +68,7 @@ export function Hero() {
         <div className="animate-rise flex flex-wrap items-center gap-x-4 gap-y-2">
           <p className="label flex items-center gap-3 text-white/80">
             <span className="bg-brand inline-block h-2 w-2" aria-hidden="true" />
-            Industrial Manufacturing · India
+            INDUSTRIAL MANUFACTURING · INDIA
           </p>
         </div>
 

@@ -21,6 +21,7 @@ import sectorAirPollution from "@/assets/images/sector-air-pollution.jpg";
 import sectorManufacturing from "@/assets/images/sector-manufacturing.jpg";
 import platformsYellowRailings from "@/assets/images/platforms-yellow-railings.jpg";
 import tanksStairs from "@/assets/images/tanks-stairs.jpg";
+import sugarFactory from "@/assets/images/sugar-factory.jpg";
 
 export interface MediaItem {
   src: StaticImageData;
@@ -52,18 +53,18 @@ export const media = {
   },
   cuttingMachine: {
     src: cuttingMachine,
-    alt: "Machine cutting steel plate with sparks",
-    source: "https://www.pexels.com/photo/8973680/",
+    alt: "Elevated structural steel walkway with safety railings and industrial stairs in a manufacturing plant",
+    source: "Automech industrial asset photography",
   },
   grindingFrames: {
     src: grindingFrames,
-    alt: "Worker grinding welded steel frames on a workshop floor",
-    source: "https://www.pexels.com/photo/38847632/",
+    alt: "Fabricated structural steel girders and trusses on support trestles inside a heavy fabrication workshop bay",
+    source: "Automech industrial asset photography",
   },
   inspectionCaliper: {
     src: inspectionCaliper,
-    alt: "Caliper measuring the flange of a steel section",
-    source: "https://www.pexels.com/photo/36003972/",
+    alt: "Heavy structural steel equipment support frame with cross-bracing and mounting pads in a workshop bay",
+    source: "Automech industrial asset photography",
   },
   rawSteelSections: {
     src: rawSteelSections,
@@ -87,7 +88,7 @@ export const media = {
   },
   siteErection: {
     src: siteErection,
-    alt: "Worker fitting steel beams during on-site assembly",
+    alt: "Structural steel framing and bolted beam assemblies during on-site erection",
     source: "https://www.pexels.com/photo/35383408/",
   },
   welderPortrait: {
@@ -97,8 +98,8 @@ export const media = {
   },
   stairTower: {
     src: stairTower,
-    alt: "Steel stair tower with landings and handrails",
-    source: "https://www.pexels.com/photo/16613539/",
+    alt: "Multi-tier industrial structural steel stair tower with access platforms and galvanized grating",
+    source: "Automech industrial asset photography",
   },
   dispatchLifting: {
     src: dispatchLifting,
@@ -132,13 +133,18 @@ export const media = {
   },
   platformsYellowRailings: {
     src: platformsYellowRailings,
-    alt: "Multi-level steel platforms with yellow handrails on a process structure",
-    source: "https://www.pexels.com/photo/5851547/",
+    alt: "Fabricated structural steel access platform with stairs, safety yellow handrails and grating walkways",
+    source: "Automech industrial asset photography",
   },
   tanksStairs: {
     src: tanksStairs,
     alt: "Storage tanks with steel stairs and railings",
     source: "https://www.pexels.com/photo/31403876/",
+  },
+  sugarFactory: {
+    src: sugarFactory,
+    alt: "Sugar factory and cane processing plant with structural steel conveyor gantries, boilers and clarification tanks",
+    source: "Automech industrial asset photography",
   },
 } satisfies Record<string, MediaItem>;
 
@@ -165,9 +171,14 @@ export const heroVideo = {
 
 /** Representative image for each industry sector, keyed by industry id. */
 export const industryMedia: Record<string, MediaItem> = {
+  "sugar-and-cement": media.sugarFactory,
+  "chemical-and-refineries": media.sectorChemical,
   "power-and-energy": media.sectorPower,
+  "industrial-filtration": media.sectorAirPollution,
+  "machinery-manufacturing": media.sectorManufacturing,
+  // Backward compatibility aliases
+  "cement-and-minerals": media.sugarFactory,
   "chemical-and-process": media.sectorChemical,
-  "cement-and-minerals": media.sectorCement,
   "environmental-and-filtration": media.sectorAirPollution,
   "general-manufacturing": media.sectorManufacturing,
 };

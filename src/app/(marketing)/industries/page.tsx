@@ -7,9 +7,9 @@ import { QuoteBand } from "@/components/sections/quote-band";
 import { TextLink } from "@/components/ui/text-link";
 
 export const metadata: Metadata = {
-  title: "Industries",
+  title: "Industries & Customers",
   description:
-    "Structural steel for power, process, cement and bulk materials, air pollution control and general manufacturing plants across India.",
+    "Structural steel for sugar and cement plants, chemical processing, power and energy, industrial filtration, and machinery manufacturing across India.",
   alternates: {
     canonical: "/industries",
   },
@@ -17,16 +17,20 @@ export const metadata: Metadata = {
 
 const audiences = [
   {
-    title: "Procurement departments",
-    text: "Buying fabricated steel against drawings and a bill of materials.",
+    title: "Procurement & Supply Chain Teams",
+    text: "Buying fabricated structural steel and equipment supports against engineering drawings and bills of materials.",
   },
   {
-    title: "Engineering and EPC firms",
-    text: "Needing a fabricator for structures within a larger package.",
+    title: "Engineering & EPC Companies",
+    text: "Partnering for equipment support frameworks, access galleries, and staging within turnkey packages.",
   },
   {
-    title: "Supply-chain teams",
-    text: "Sourcing support steel for equipment they supply or install.",
+    title: "Equipment Manufacturers",
+    text: "Sourcing dedicated mounting skids, support stands, and integrated access platforms for industrial equipment.",
+  },
+  {
+    title: "Industrial Project Contractors",
+    text: "Supplying fabricated assemblies, stairs, walkways, and on-site erection packages across India.",
   },
 ];
 
@@ -34,22 +38,22 @@ export default function IndustriesPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Industries"
-        title="Where our structures are used."
-        lead="These are the kinds of plants our structures typically go into. If your project needs steel made to a drawing, we can likely help."
+        eyebrow="Industries & Customers"
+        title="Supporting Industry Across India."
+        lead="We manufacture steel structures, equipment supports and custom assemblies for industrial projects, with a focus on quality, precision and timely delivery."
       />
 
       {/* Who buys from us */}
-      <section aria-label="Who we work with" className="pb-16 sm:pb-20">
+      <section aria-label="Customer groups" className="pb-16 sm:pb-20">
         <div className="container-site">
-          <ul className="border-navy grid grid-cols-1 border-t md:grid-cols-3" role="list">
+          <ul className="border-navy grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-4" role="list">
             {audiences.map((a) => (
               <li
                 key={a.title}
-                className="border-rule border-b py-6 md:border-b-0 md:border-l md:px-8 md:first:border-l-0 md:first:pl-0"
+                className="border-rule border-b py-6 sm:px-6 sm:border-l sm:first:border-l-0 sm:first:pl-0 lg:border-b-0"
               >
-                <h2 className="text-navy text-lg font-semibold">{a.title}</h2>
-                <p className="text-graphite mt-1.5 text-[0.95rem]">{a.text}</p>
+                <h2 className="text-navy text-base sm:text-lg font-semibold">{a.title}</h2>
+                <p className="text-graphite mt-1.5 text-sm">{a.text}</p>
               </li>
             ))}
           </ul>

@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Industrial Steel Fabrication & Equipment Support Structures | Dahigaon, Maharashtra",
   description:
-    "Automech Industries manufactures heavy equipment support structures, platforms, walkways, stairs and railings built to your engineering drawings. Operating continuously since 1997 in Dahigaon, Solapur.",
+    "Automech Industries manufactures steel structures, equipment supports, platforms, walkways, stairs and railings for industrial plants, along with custom machinery manufacturing and assembly. Based in Dahigaon, Maharashtra, serving projects across India.",
   alternates: {
     canonical: "/",
   },
@@ -35,28 +35,28 @@ const strip = [
 
 const reasons = [
   {
-    title: "Your drawing is the brief",
-    text: "We work to the approved drawings and specifications you send us. If something on the drawing isn't clear, we ask before we cut.",
+    title: "Accuracy & Workmanship",
+    text: "Attention to dimensions, fit and finish in every component we manufacture.",
   },
   {
-    title: "Workshop and site",
-    text: "Fabrication happens at our Dahigaon works. Setup and installation happen at your plant.",
+    title: "Manufacturing & Installation",
+    text: "Workshop manufacturing and on-site assembly to support your project from production to installation.",
   },
   {
-    title: "Straight answers on scope",
-    text: "We tell you plainly what we make and what we don't: the steel structures that support equipment, not the equipment itself.",
+    title: "Project Coordination",
+    text: "Clear communication and careful planning to keep manufacturing and delivery on schedule.",
   },
   {
-    title: "Specialists where it counts",
-    text: "For complex components and heavy lifts, we work with specialist subcontractors.",
+    title: "Specialist Support",
+    text: "We work with specialist subcontractors for complex components and additional manufacturing capabilities.",
   },
 ];
 
 const audiences = [
-  "Procurement departments",
-  "Engineering and EPC firms",
-  "Supply-chain teams",
-  "Plant and maintenance managers",
+  "Procurement & Supply Chain Teams",
+  "Engineering & EPC Companies",
+  "Equipment Manufacturers",
+  "Industrial Project Contractors",
 ];
 
 export default function HomePage() {
@@ -65,7 +65,7 @@ export default function HomePage() {
       <Hero />
 
       {/* Stationary brand statement */}
-      <div className="bg-brand py-4.5 text-white sm:py-5">
+      <div className="bg-brand py-4 text-white sm:py-5">
         <div className="container-site flex items-center justify-center text-center">
           <p className="font-display text-[clamp(1.05rem,2.2vw,1.35rem)] font-semibold tracking-wide text-white">
             Accuracy in Every Detail. Quality in Every Build.
@@ -110,17 +110,17 @@ export default function HomePage() {
           </Marquee>
         </section>
 
-        {/* 01 — What we fabricate */}
-        <section aria-labelledby="capabilities-title" className="pb-20 sm:pb-28">
+        {/* 01 — Capabilities */}
+        <section aria-labelledby="capabilities-title" className="pb-12 sm:pb-20 lg:pb-28">
           <div className="container-site">
-            <div className="mb-12 flex flex-col justify-between gap-8 lg:mb-14 lg:flex-row lg:items-end">
+            <div className="mb-8 flex flex-col justify-between gap-6 sm:mb-12 lg:mb-14 lg:flex-row lg:items-end">
               <div data-rise>
                 <SectionHeader
                   index="01"
-                  eyebrow="What we fabricate"
+                  eyebrow="OUR MANUFACTURING CAPABILITIES"
                   id="capabilities-title"
-                  title="Steel structures for industrial plants."
-                  description="Six kinds of work make up most of what we do. Each one is fabricated to your drawing."
+                  title="Industrial Manufacturing. Built with Precision."
+                  description="We manufacture steel structures, equipment supports and custom components for industrial plants, with a focus on accuracy, quality and practical requirements."
                 />
               </div>
               <TextLink href="/capabilities" className="shrink-0">
@@ -135,9 +135,9 @@ export default function HomePage() {
         <Process />
 
         {/* 03 — Why Automech */}
-        <section aria-labelledby="why-title" className="py-20 sm:py-28">
-          <div className="container-site grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
-            <div className="relative pb-10 lg:col-span-5 lg:pb-0">
+        <section aria-labelledby="why-title" className="py-12 sm:py-20 lg:py-28">
+          <div className="container-site grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-12">
+            <div className="relative pb-8 sm:pb-10 lg:col-span-5 lg:pb-0">
               <div data-reveal className="bg-steel relative aspect-[4/5] overflow-hidden">
                 <Image
                   data-parallax
@@ -152,10 +152,12 @@ export default function HomePage() {
               </div>
               <div
                 data-rise
-                className="bg-brand absolute right-0 bottom-0 px-7 py-6 text-white sm:px-9 sm:py-8 lg:-right-10 lg:-bottom-10"
+                className="bg-brand absolute right-0 bottom-0 px-6 py-5 text-white sm:px-9 sm:py-8 lg:-right-10 lg:-bottom-10"
               >
-                <p className="label text-white/75">In Dahigaon since</p>
-                <p className="font-display mt-1 text-[clamp(3.5rem,7vw,6rem)] leading-none font-bold tracking-tight">
+                <p className="label text-white/80 text-[0.65rem] sm:text-xs">
+                  Automech Industries since
+                </p>
+                <p className="font-display mt-0.5 text-3xl font-bold tracking-tight sm:mt-1 sm:text-[clamp(3.5rem,7vw,6rem)] leading-none">
                   {siteConfig.company.foundedYear}
                 </p>
               </div>
@@ -164,27 +166,33 @@ export default function HomePage() {
               <div data-rise>
                 <SectionHeader
                   index="03"
-                  eyebrow="Why work with us"
+                  eyebrow="WHY CHOOSE US"
                   id="why-title"
-                  title={`A fabrication works you can rely on, since ${siteConfig.company.foundedYear}.`}
+                  title={
+                    <>
+                      A Commitment to Quality.
+                      <br />
+                      A Focus on Precision.
+                    </>
+                  }
                 />
               </div>
-              <ol className="border-navy mt-12 border-t">
+              <ol className="border-navy mt-6 border-t sm:mt-10 lg:mt-12">
                 {reasons.map((reason, i) => (
                   <li
                     key={reason.title}
                     data-rise
-                    className="border-rule group grid grid-cols-[3rem_1fr] gap-x-4 border-b py-6 sm:grid-cols-[4.5rem_1fr]"
+                    className="border-rule group grid grid-cols-[2.5rem_1fr] gap-x-3 border-b py-3.5 sm:grid-cols-[4.5rem_1fr] sm:gap-x-4 sm:py-5 lg:py-6"
                   >
                     <span
-                      className="font-display text-rule-strong group-hover:text-brand text-3xl leading-none font-bold transition-colors sm:text-4xl"
+                      className="font-display text-rule-strong group-hover:text-brand text-2xl leading-none font-bold transition-colors sm:text-4xl"
                       aria-hidden="true"
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <h3 className="text-navy text-xl font-semibold">{reason.title}</h3>
-                      <p className="text-graphite mt-1.5">{reason.text}</p>
+                      <h3 className="text-navy text-lg font-semibold sm:text-xl">{reason.title}</h3>
+                      <p className="text-graphite mt-1 text-sm sm:mt-1.5 sm:text-base leading-relaxed">{reason.text}</p>
                     </div>
                   </li>
                 ))}
@@ -194,26 +202,26 @@ export default function HomePage() {
         </section>
 
         {/* 04 — Industries */}
-        <section aria-labelledby="industries-title" className="bg-steel py-20 sm:py-28">
+        <section aria-labelledby="industries-title" className="bg-steel py-12 sm:py-20 lg:py-28">
           <div className="container-site">
-            <div className="mb-14 grid grid-cols-1 gap-8 lg:mb-16 lg:grid-cols-12 lg:items-end lg:gap-12">
+            <div className="mb-8 grid grid-cols-1 gap-6 sm:mb-12 lg:mb-16 lg:grid-cols-12 lg:items-end lg:gap-12">
               <div data-rise className="lg:col-span-7">
                 <SectionHeader
                   index="04"
-                  eyebrow="Who we work with"
+                  eyebrow="INDUSTRIES & CUSTOMERS"
                   id="industries-title"
-                  title="Industrial buyers across India."
+                  title="Supporting Industry Across India."
                 />
               </div>
               <div className="lg:col-span-5">
-                <p className="text-graphite">
-                  We work with teams who need structural steel delivered to drawing and on time:
+                <p className="text-graphite text-base sm:text-lg leading-relaxed">
+                  We manufacture steel structures, equipment supports and custom assemblies for industrial projects, with a focus on quality, precision and timely delivery.
                 </p>
-                <ul className="mt-5 flex flex-wrap gap-2" role="list">
+                <ul className="mt-4 flex flex-wrap gap-2 sm:mt-5" role="list">
                   {audiences.map((a) => (
                     <li
                       key={a}
-                      className="border-rule-strong text-navy-soft hover:border-navy border px-3.5 py-2 text-sm transition-colors"
+                      className="border-rule-strong text-navy-soft hover:border-navy border px-3 py-1.5 text-xs transition-colors sm:px-3.5 sm:py-2 sm:text-sm"
                     >
                       {a}
                     </li>

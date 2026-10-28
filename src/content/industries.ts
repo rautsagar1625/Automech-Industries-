@@ -7,23 +7,24 @@ import type { IndustryItem } from "@/types";
  */
 export const industriesData: IndustryItem[] = [
   {
-    id: "power-and-energy",
-    slug: "power-and-energy",
-    title: "Power Generation & Auxiliary Systems",
-    targetProcurementRole: "Head of Plant Procurement & EPC Project Managers",
+    id: "sugar-and-cement",
+    slug: "sugar-and-cement",
+    title: "Sugar & Cement Plants",
+    targetProcurementRole: "Works Managers & Capital Equipment Procurement Leads",
     description:
-      "Structural steel framing, boiler staging platforms, auxiliary equipment supports, and piping bridge structures for thermal, biomass, and captive energy installations.",
+      "Heavy-duty transfer tower framing, conveyor gallery walkways, cane handling gantry steel, juice clarification and boiling house supports, crusher access structures, and non-pressure hopper systems.",
     applicableStructures: [
-      "Boiler equipment auxiliary support frameworks",
-      "Draft fan and air preheater support stools",
-      "Flue gas ducting trestles and expansion guide frames",
-      "Multi-tier boiler operational maintenance galleries",
+      "Conveyor gallery inspection walkways with handrails and kick-plates",
+      "Transfer point structural staging and chute support steel",
+      "Cane handling gantry frames and bagasse conveyor galleries",
+      "Non-pressure surge hopper and juice tank support framework",
+      "Mill drive motor mounting skids and structural bases",
     ],
   },
   {
-    id: "chemical-and-process",
-    slug: "chemical-and-process",
-    title: "Chemical & Process Industries",
+    id: "chemical-and-refineries",
+    slug: "chemical-and-refineries",
+    title: "Chemical Processing & Refineries",
     targetProcurementRole: "Project Engineering Heads & Mechanical Package In-charge",
     description:
       "Stiffened skid frames, process vessel access structures, corrosion-resistant coated stair towers, and inter-unit utility pipe racks.",
@@ -35,23 +36,23 @@ export const industriesData: IndustryItem[] = [
     ],
   },
   {
-    id: "cement-and-minerals",
-    slug: "cement-and-minerals",
-    title: "Cement, Sugar & Bulk Material Processing",
-    targetProcurementRole: "Works Managers & Capital Equipment Procurement Leads",
+    id: "power-and-energy",
+    slug: "power-and-energy",
+    title: "Power & Energy",
+    targetProcurementRole: "Head of Plant Procurement & EPC Project Managers",
     description:
-      "Heavy-duty transfer tower framing, conveyor gallery walkways, crusher building access structures, and non-pressure hopper support systems.",
+      "Structural steel framing, boiler staging platforms, auxiliary equipment supports, and piping bridge structures for thermal, biomass, and captive energy installations.",
     applicableStructures: [
-      "Conveyor gallery inspection walkways with handrails and kick-plates",
-      "Transfer point structural staging and chute support steel",
-      "Non-pressure surge hopper support framework",
-      "Mill drive motor mounting skids and structural bases",
+      "Boiler equipment auxiliary support frameworks",
+      "Draft fan and air preheater support stools",
+      "Flue gas ducting trestles and expansion guide frames",
+      "Multi-tier boiler operational maintenance galleries",
     ],
   },
   {
-    id: "environmental-and-filtration",
-    slug: "environmental-and-filtration",
-    title: "Air Pollution Control & Filtration Engineering",
+    id: "industrial-filtration",
+    slug: "industrial-filtration",
+    title: "Industrial Filtration Systems",
     targetProcurementRole: "OEM System Integrators & Mechanical Supply Chain Managers",
     description:
       "Elevated staging structures, baghouse filter towers, cyclone separator frames, and scrubbers access stairs fabricated to OEM partner drawings.",
@@ -63,9 +64,9 @@ export const industriesData: IndustryItem[] = [
     ],
   },
   {
-    id: "general-manufacturing",
-    slug: "general-manufacturing",
-    title: "General Heavy Manufacturing & Industrial Plants",
+    id: "machinery-manufacturing",
+    slug: "machinery-manufacturing",
+    title: "Machinery & Manufacturing",
     targetProcurementRole: "Plant Engineering Heads & Maintenance Directors",
     description:
       "Custom structural steel fabrication for factory expansion, mezzanine storage platforms, machine foundation frames, and internal utility gantries.",

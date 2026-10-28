@@ -9,16 +9,17 @@ import { cn } from "@/lib/utils";
 /** Short, plain-language summaries for the homepage grid. */
 const summaries: Record<string, string> = {
   "equipment-support-frames":
-    "Base frames, skids, motor stools and pump bases for plant equipment.",
-  "boiler-support-structures":
-    "Columns, beams, staging and access levels around boilers and their auxiliaries.",
-  "filtration-support-structures":
-    "Support towers, skid bases and hopper access for dust collectors and filter units.",
+    "Steel frames, skids, motor supports and pump bases for industrial machinery and equipment.",
   "platforms-railings-stairs":
-    "Walkways, platforms, stairs, ladders and handrails for safe access across your plant.",
+    "Platforms, walkways, stairs, ladders and railings for access throughout industrial facilities.",
+  "boiler-support-structures":
+    "Steel columns, beams, frameworks and access platforms for boilers and associated equipment.",
+  "filtration-support-structures":
+    "Support frames, towers, bases and platforms for filtration systems and dust collection equipment.",
   "custom-fabrication":
-    "Pipe racks, trestles, chutes, hoppers and built-up sections made to your drawing.",
-  "site-setup-assembly": "Erection, bolting, alignment and site welding at your plant.",
+    "Steel components and welded assemblies made from plates, channels, angles and pipes.",
+  "site-setup-assembly":
+    "On-site structural assembly, positioning, alignment, bolting and welding.",
 };
 
 const order = [

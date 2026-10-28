@@ -10,9 +10,9 @@ import { ButtonArrow, ButtonLink } from "@/components/ui/button";
 import type { ProjectCategory } from "@/types/enquiry";
 
 export const metadata: Metadata = {
-  title: "Capabilities",
+  title: "Manufacturing Capabilities",
   description:
-    "Equipment support structures, boiler and filtration support structures, platforms, walkways, stairs and railings, custom fabrication to drawing, and on-site installation.",
+    "Equipment frames and skids, platforms, stairs and railings, boiler support structures, filtration system structures, custom components and on-site assembly across India.",
   alternates: {
     canonical: "/capabilities",
   },
@@ -30,12 +30,12 @@ const quoteCategory: Record<string, ProjectCategory> = {
 
 /** Short labels for the in-page menu. */
 const shortLabel: Record<string, string> = {
-  "boiler-support-structures": "Boiler support structures",
-  "filtration-support-structures": "Filtration support structures",
-  "platforms-railings-stairs": "Platforms, stairs & railings",
-  "equipment-support-frames": "Equipment supports & skids",
-  "custom-fabrication": "Custom fabrication",
-  "site-setup-assembly": "On-site installation",
+  "equipment-support-frames": "Equipment Frames & Skids",
+  "platforms-railings-stairs": "Platforms, Stairs & Railings",
+  "boiler-support-structures": "Boiler Support Structures",
+  "filtration-support-structures": "Filtration System Structures",
+  "custom-fabrication": "Custom Components & Assemblies",
+  "site-setup-assembly": "On-Site Assembly & Installation",
 };
 
 export default function CapabilitiesPage() {
@@ -47,9 +47,9 @@ export default function CapabilitiesPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Capabilities"
-        title="What we fabricate and install."
-        lead="Steel structures for industrial plants, made at our Dahigaon works to your drawings and specifications, and installed on site when you need it."
+        eyebrow="OUR MANUFACTURING CAPABILITIES"
+        title="Industrial Manufacturing. Built with Precision."
+        lead="We manufacture steel structures, equipment supports and custom components for industrial plants, with a focus on accuracy, quality and practical requirements."
         image={media.heroSteelFrameErection}
       />
 

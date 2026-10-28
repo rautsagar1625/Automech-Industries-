@@ -9,10 +9,10 @@ export const capabilitiesData: CapabilityItem[] = [
   {
     id: "boiler-support-structures",
     slug: "boiler-support-structures",
-    title: "Boiler Equipment Support Structures",
+    title: "Boiler Support Structures",
     structuralCategory: "support-structures",
     shortDescription:
-      "Heavy-duty steel structural framing and load-bearing staging designed to support industrial boilers and auxiliary equipment.",
+      "Steel columns, beams, frameworks and access platforms for boilers and associated equipment.",
     detailedScope: [
       "Heavy column and beam structural framing designed for thermal load allowances",
       "Staging platforms and burner access levels fabricated to engineering drawings",
@@ -30,10 +30,10 @@ export const capabilitiesData: CapabilityItem[] = [
   {
     id: "filtration-support-structures",
     slug: "filtration-support-structures",
-    title: "Filtration Equipment Support Structures",
+    title: "Filtration System Structures",
     structuralCategory: "support-structures",
     shortDescription:
-      "Engineered structural towers, skid bases, and elevated support frames for industrial air and liquid filtration assemblies.",
+      "Support frames, towers, bases and platforms for filtration systems and dust collection equipment.",
     detailedScope: [
       "Multi-tier elevated towers for dust collector and baghouse installations",
       "Heavy skid frame bases for skid-mounted industrial filter packages",
@@ -51,10 +51,10 @@ export const capabilitiesData: CapabilityItem[] = [
   {
     id: "platforms-railings-stairs",
     slug: "platforms-railings-stairs",
-    title: "Industrial Platforms, Railings & Stairs",
+    title: "Platforms, Stairs & Railings",
     structuralCategory: "access-systems",
     shortDescription:
-      "OSHA and Indian Standard compliant operational walkways, maintenance platforms, cat ladders, handrails, and industrial stair towers.",
+      "Platforms, walkways, stairs, ladders and railings for access throughout industrial facilities.",
     detailedScope: [
       "Serrated grating and chequered plate mezzanine platforms",
       "Industrial stringer stairs with standard rise-and-run geometry",
@@ -72,10 +72,10 @@ export const capabilitiesData: CapabilityItem[] = [
   {
     id: "equipment-support-frames",
     slug: "equipment-support-frames",
-    title: "Equipment Support Structures & Skids",
+    title: "Equipment Frames & Skids",
     structuralCategory: "support-structures",
     shortDescription:
-      "Robust base frames, motor stools, pump bases, and vibration-isolated structural mountings for rotating and stationary plant equipment.",
+      "Steel frames, skids, motor supports and pump bases for industrial machinery and equipment.",
     detailedScope: [
       "Structural steel channel and beam foundation skids",
       "Machined motor stool plates and adjustable level brackets",
@@ -93,10 +93,10 @@ export const capabilitiesData: CapabilityItem[] = [
   {
     id: "custom-fabrication",
     slug: "custom-fabrication",
-    title: "Custom Industrial Steel Fabrication",
+    title: "Custom Components & Assemblies",
     structuralCategory: "custom-fabrication",
     shortDescription:
-      "Tailored structural fabrication according to client-supplied workshop drawings, structural specifications, and bill of materials.",
+      "Steel components and welded assemblies made from plates, channels, angles and pipes.",
     detailedScope: [
       "Built-up plate girders and heavy structural column sections",
       "Pipe racks, cable bridge gantries, and utility trestles",
@@ -114,10 +114,10 @@ export const capabilitiesData: CapabilityItem[] = [
   {
     id: "site-setup-assembly",
     slug: "site-setup-assembly",
-    title: "On-Site Setup & Manufacturing Services",
+    title: "On-Site Assembly & Installation",
     structuralCategory: "site-services",
     shortDescription:
-      "Field erection, bolted assembly, alignment, and site welding supported by experienced fitters, certified welders, and specialist subcontractors.",
+      "On-site structural assembly, positioning, alignment, bolting and welding.",
     detailedScope: [
       "Pre-assembly layout and trial assembly at plant or site ground level",
       "Erection of fabricated structural columns, trusses, and platforms",
